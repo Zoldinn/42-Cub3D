@@ -1,0 +1,1 @@
+NAME="Cub3d"
