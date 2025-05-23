@@ -28,19 +28,73 @@ char	*get_next_line(int fd)
 	return (ft_strdup(line));
 }
 
-void	floodfill(int r, int c, t_map *map)
+//check if the map data is valid
+//x is set to know if we check map border
+int	check_map_data(t_map *map, int i, int j, int x)
 {
-	if ((c < 0 || r < 0 || r >= map->rows) || map->data[r][c] == '\0'
-		|| map->data[r][c] == 'v' || map->data[r][c] == '1'
-		|| map->data[r][c] == ' ')
-		return ;
-	map->data[r][c] = 'v';
-	floodfill(r, c + 1, map);
-	floodfill(r, c - 1, map);
-	floodfill(r + 1, c, map);
-	floodfill(r - 1, c, map);
+	if ((i < 0 || i == map->rows)
+		|| j < 0 || map->data[i][j] == '\0')
+		return (1);
+	if (x == 1)
+	{
+		if (map->data[i][j] == '0' || map->data[i][j] == '1'
+		|| map->data[i][j] == 'N' || map->data[i][j] == 'S'
+		|| map->data[i][j] == 'E' || map->data[i][j] == 'W'
+		|| map->data[i][j] == ' ')
+			return (0);
+	}
+	else
+	{
+		if (map->data[i][j] == '0' || map->data[i][j] == '1'
+		|| map->data[i][j] == 'N' || map->data[i][j] == 'S'
+		|| map->data[i][j] == 'E' || map->data[i][j] == 'W')
+			return (0);
+	}
+	return (printf("char : %c\n", map->data[i][j]), 1);
 }
 
+int	get_check_map_data(t_map *map, int i, int j)
+{
+	if (map->data[i][j] != '0')
+	{
+		if (check_map_data(map, i, j, 1) == 1)
+			return (1);
+	}
+	else
+	{
+		if (check_map_data(map, i + 1, j, 0) == 1)
+			return (1);
+		if (check_map_data(map, i - 1, j, 0) == 1)
+			return (1);
+		if (check_map_data(map, i, j + 1, 0) == 1)
+			return (1);
+		if (check_map_data(map, i, j - 1, 0) == 1)
+			return (1);
+	}
+	return (0);
+}
+
+int	check_map(t_map *map)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < map->rows)
+	{
+		j = 0;
+		while (map->data[i][j])
+		{
+			if (get_check_map_data(map, i, j) == 1)
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
+//read map in .cub format, put it in a char** and check if map is correct
 int	get_map(t_map *map)
 {
 	char	*str;
@@ -62,11 +116,7 @@ int	get_map(t_map *map)
 	}
 	map->data = ft_split(map_temp, '\n');
 	free(map_temp);
-	for (int i = 0; i < map->rows; i++)
-		printf("%s\n", map->data[i]);
-	printf("\n");
-	floodfill(1, 10, map);
-	for (int i = 0; i < map->rows; i++)
-		printf("%s\n", map->data[i]);
+	if (check_map(map) == 1)
+		printf("Error 1 in the map\n");
 	return (0);
 }
