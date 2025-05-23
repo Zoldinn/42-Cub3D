@@ -15,8 +15,14 @@ int	check_extension(char *file_name)
 	return (0);
 }
 
+void	free_map(t_map *map)
+{
+	free_db_array(map->data);
+}
+
 static int	check_args(int argc, char **argv)
 {
+
 	if (argc < 2)
 	{
 		printf("An argument including a map in .cub format is required.\n");
@@ -28,7 +34,6 @@ static int	check_args(int argc, char **argv)
 	{
 		if (ft_strnstr(argv[1], ".cub", ft_strlen(argv[1])) == NULL)
 			return (printf("Error\nMap file isn't .cub\n"), 1);
-		printf("%s\n", argv[1]);
 	}
 	if (check_extension(argv[1]) != 0)
 		return (1);
@@ -37,7 +42,11 @@ static int	check_args(int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
+	t_map	map;
+
 	if (check_args(argc, argv) != 0)
 		return (1);
+	get_map(&map);
+	free_map(&map);
 	return (0);
 }
