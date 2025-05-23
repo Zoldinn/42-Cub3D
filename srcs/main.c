@@ -1,6 +1,21 @@
 #include "../cub3d.h"
 
-int	main(int argc, char **argv)
+int	check_extension(char *file_name)
+{
+	int	len;
+
+	len = ft_strlen(file_name);
+	if (len <= 4)
+		return (1);
+	else if (file_name[len - 4] != '.'
+		|| file_name[len - 3] != 'c'
+		|| file_name[len - 2] != 'u'
+		|| file_name[len - 1] != 'b')
+		return (1);
+	return (0);
+}
+
+static int	check_args(int argc, char **argv)
 {
 	if (argc < 2)
 	{
@@ -15,5 +30,14 @@ int	main(int argc, char **argv)
 			return (printf("Error\nMap file isn't .cub\n"), 1);
 		printf("%s\n", argv[1]);
 	}
+	if (check_extension(argv[1]) != 0)
+		return (1);
+	return (0);
+}
+
+int	main(int argc, char **argv)
+{
+	if (check_args(argc, argv) != 0)
+		return (1);
 	return (0);
 }

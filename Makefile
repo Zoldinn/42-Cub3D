@@ -7,7 +7,9 @@ DIR_OBJ = objs
 DIR_MLX = mlx
 DIR_LIBFT = libft
 
-SRC = $(addprefix $(DIR_SRC)/, main.c )
+SRC = $(addprefix $(DIR_SRC)/, main.c \
+	utils.c \
+	check_map_file.c)
 OBJ = $(addprefix $(DIR_OBJ)/, $(notdir $(SRC:.c=.o)))
 
 LIBFT = $(DIR_LIBFT)/libft.a

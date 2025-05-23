@@ -6,4 +6,8 @@
 # include <stdlib.h>
 # include "libft/libft.h"
 
+void	p_er(char *str);
+int		ft_check_atoi(const char *nptr);
+int		check_extension(char *file_name);
+
 #endif
