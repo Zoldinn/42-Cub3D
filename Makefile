@@ -30,7 +30,7 @@ $(DIR_OBJ):
 
 $(LIBFT):
 	@echo "📦 Compilation de libft..."
-	@make -s -C $(DIR_LIBFT)
+	@make -s -C $(DIR_LIBFT) > /dev/null 2>&1
 
 $(MLX):
 	@echo "📦 Compilation de la MiniLibX..."
