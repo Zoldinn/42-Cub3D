@@ -26,3 +26,32 @@ int	check_rgb_values(char *rgb[2])
 	return (0);
 }
 
+// char	*find_arg(char *id)
+
+char	**get_file(char *file_name)
+{
+	int		fd;
+	int		i;
+	char	**file;
+
+	fd = open(file_name, O_RDONLY);
+	file = ft_calloc(sizeof(char *), 20000);
+	if (!file)
+		return (NULL);
+	i = -1;
+	while (++i < 20000)
+	{
+		file[i] = get_next_line(fd);
+		if (file[i] == NULL)
+			break ;
+	}
+	// check qu'il y a quelque chose dans le fichier
+	if (i >= 20000)
+		return (p_er("your map is too big !"), NULL);
+
+}
+
+int	check_file(char *file_name)
+{
+	
+}
