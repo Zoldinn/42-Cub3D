@@ -28,6 +28,19 @@ char	*get_next_line(int fd)
 	return (ft_strdup(line));
 }
 
+void	floodfill(int r, int c, t_map *map)
+{
+	if ((c < 0 || r < 0 || r >= map->rows) || map->data[r][c] == '\0'
+		|| map->data[r][c] == 'v' || map->data[r][c] == '1'
+		|| map->data[r][c] == ' ')
+		return ;
+	map->data[r][c] = 'v';
+	floodfill(r, c + 1, map);
+	floodfill(r, c - 1, map);
+	floodfill(r + 1, c, map);
+	floodfill(r - 1, c, map);
+}
+
 int	get_map(t_map *map)
 {
 	char	*str;
@@ -47,8 +60,12 @@ int	get_map(t_map *map)
 		free(str);
 		str = get_next_line(fd);
 	}
-	map->data = ft_split(map_temp, "\n");
+	map->data = ft_split(map_temp, '\n');
 	free(map_temp);
+	for (int i = 0; i < map->rows; i++)
+		printf("%s\n", map->data[i]);
+	printf("\n");
+	floodfill(1, 10, map);
 	for (int i = 0; i < map->rows; i++)
 		printf("%s\n", map->data[i]);
 	return (0);
