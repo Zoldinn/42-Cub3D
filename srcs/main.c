@@ -15,11 +15,6 @@ int	check_extension(char *file_name)
 	return (0);
 }
 
-void	free_map(t_map *map)
-{
-	free_db_array(map->data);
-}
-
 static int	check_args(int argc, char **argv)
 {
 
@@ -43,9 +38,11 @@ static int	check_args(int argc, char **argv)
 int	main(int argc, char **argv)
 {
 	t_mtd	mtd;
+	t_map map;
 
 	if (check_args(argc, argv) != 0)
 		return (1);
+	get_map(&map);
 	if (check_file(argv[1], &mtd) != 0)
 		return (1);
 	return (0);

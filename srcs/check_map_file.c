@@ -10,7 +10,7 @@ int	check_rgb_values(char *rgb[2])
 	i = -1;
 	while (++i < 2)
 	{
-		values = ft_split(rgb[i], ',');
+		values = ft_split(rgb[i], ",");
 		if (!values)
 			return (p_er("Failed split rgb values"), 1);
 		j = -1;
@@ -88,7 +88,7 @@ char	**id(void)
 
 	id = ft_calloc(sizeof(char *), 7);
 	if (!id)
-		return (1);
+		return (NULL);
 	id[0] = "NO";
 	id[1] = "SO";
 	id[2] = "WE";
@@ -106,4 +106,5 @@ int	check_file(char *path, t_mtd *mtd)
 		return (1);
 	if (get_mtd(mtd, id()) != 0)
 		return (1);
+	return (0);
 }

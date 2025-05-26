@@ -9,8 +9,8 @@ DIR_LIBFT = libft
 
 SRC = $(addprefix $(DIR_SRC)/, main.c \
 	utils.c \
+	utils2.c \
 	check_map_file.c \
-	edge_parsing.c \
 	map_parsing.c \
 	frees.c)
 OBJ = $(addprefix $(DIR_OBJ)/, $(notdir $(SRC:.c=.o)))

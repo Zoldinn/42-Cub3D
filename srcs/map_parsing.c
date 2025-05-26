@@ -68,57 +68,83 @@ void	check_map(t_map *map)
 	}
 }
 
-void	find_start_map(t_map *map, int fd)
+void	find_start_map(t_map *map, int index, char **temp)
 {
 	char	**arr;
-	char	*str;
-	char	*map_temp;
 	int		i;
 
-	str = get_next_line(fd);
-	i = 0;
-	map_temp = NULL;
-	while (str)
+	index--;
+	while (index-- != 0)
 	{
-		map_temp = ft_straddstr(map_temp, str);
-		i++;
-		free(str);
-		str = get_next_line(fd);
-	}
-	while (i-- != 0)
-	{
-		arr = ft_split(map_temp[i], " \t");
+		printf("index : %d\n", index);
+		printf("%s\n", temp[index]);
+		arr = ft_split(temp[index], " ");
 		if (ft_strlen(arr[0]) < 3)
 			break;
 		free_db_array(arr);
 	}
 	free_db_array(arr);
-	map->start_map = i;
-	free(map_temp);
+	map->start_map = index;
+	map->map = malloc((arrlen(temp) - index + 1) * sizeof(char *));
+	map->data = malloc((index + 1) * sizeof(char *));
+	while (temp[index])
+	{
+		map->map[index] = ft_strdup(temp[index]);
+		index++;
+	}
+	map->map[index] = NULL;
+	i = 0;
+	while (i < map->start_map)
+	{
+		map->data[i] = ft_strdup(temp[i]);
+		i++;
+	}
+	map->data[i] = NULL;
+	free(temp);
 }
 
 //read map in .cub format, put it in a char** and check if map is correct
 int	get_map(t_map *map)
 {
+	char	**temp;
 	char	*str;
-	char	*map_temp;
+	char	*file_temp;
 	int		fd;
+	int		index;
 
-	fd = open("./maps/edge.cub", O_RDONLY);
+	fd = open("./maps/default.cub", O_RDONLY);
 	if (fd == -1)
-		return (printf("error reading the map\n"), 1);
+		return (printf("error reading the file\n"), 1);
 	str = get_next_line(fd);
-	map_temp = NULL;
-	map->rows = 0;
+	file_temp = NULL;
+	index = 0;
+	// map->rows = 0;
 	while (str)
 	{
-		map_temp = ft_straddstr(map_temp, str);
-		map->rows++;
+		index++;
+		file_temp = ft_straddstr(file_temp, str);
+		// map->rows++;
 		free(str);
 		str = get_next_line(fd);
 	}
-	map->map = ft_split(map_temp, "\n");
-	free(map_temp);
-	check_map(map);
+	close(fd);
+	temp = ft_split(file_temp, "\n");
+	find_start_map(map, index, temp);
+	index = 0;
+	while (map->data[index])
+	{
+		printf("%s\n", map->data[index]);
+		index++;
+	}
+	printf("\n");
+	index = 0;
+	while (map->map[index])
+	{
+		printf("%s\n", map->map[index]);
+		index++;
+	}
+	// map->map = ft_split(map_temp, "\n");
+	// free(map_temp);
+	// check_map(map);
 	return (0);
 }
