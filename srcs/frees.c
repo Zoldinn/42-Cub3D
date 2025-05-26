@@ -1,0 +1,29 @@
+#include "../cub3d.h"
+
+void	free_map(t_map *map)
+{
+	free_db_array(map->data);
+}
+
+void	free_and_exit(t_map *map)
+{
+	printf("EXITING PROGRAM\n");
+	free_map(map);
+	exit(1);
+}
+
+void	free_db_array(char **arr)
+{
+	int	i;
+
+	if (arr)
+	{
+		i = 0;
+		while (arr[i])
+		{
+			free(arr[i]);
+			i++;
+		}
+		free(arr);
+	}
+}

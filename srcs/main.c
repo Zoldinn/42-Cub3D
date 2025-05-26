@@ -1,10 +1,5 @@
 #include "../cub3d.h"
 
-void	free_map(t_map *map)
-{
-	free_db_array(map->data);
-}
-
 int	main(int argc, char **argv)
 {
 	t_map	map;

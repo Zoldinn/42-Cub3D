@@ -21,19 +21,3 @@ char	*ft_straddstr(char *s1, char *s2)
 		return (res);
 	}
 }
-
-void	free_db_array(char **arr)
-{
-	int	i;
-
-	if (arr)
-	{
-		i = 0;
-		while (arr[i])
-		{
-			free(arr[i]);
-			i++;
-		}
-		free(arr);
-	}
-}
