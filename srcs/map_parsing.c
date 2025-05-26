@@ -1,33 +1,5 @@
 #include "../cub3d.h"
 
-char	*get_next_line(int fd)
-{
-	static char	buffer[1000];
-	static int	index_buf = 0;
-	static int	bytes_read = 0;
-	char		line[1000];
-	int			index_line;
-
-	index_line = 0;
-	while (1)
-	{
-		if (index_buf >= bytes_read)
-		{
-			index_buf = 0;
-			bytes_read = read(fd, buffer, 1000);
-			if (bytes_read <= 0)
-				break ;
-		}
-		line[index_line++] = buffer[index_buf++];
-		if (line[index_line - 1] == '\n')
-			break ;
-	}
-	line[index_line] = '\0';
-	if (bytes_read < 0 || index_line == 0)
-		return (NULL);
-	return (ft_strdup(line));
-}
-
 //check if the map data is valid
 //x is set to know if we check '0' or not
 int	check_map_data(t_map *map, int i, int j, int x)
