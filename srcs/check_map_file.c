@@ -51,16 +51,14 @@ char	**get_file(char *path)
 	return (file);
 }
 
-int	get_mtd(t_mtd *mtd, char **id)
+int	get_mtd(t_mtd *mtd, char **id, int i)
 {
-	int		i;
 	int		j;
 	char	**line;
 
-	i = -1;
-	while (mtd->file[++i])
+	while (mtd->map->data[++i])
 	{
-		line = ft_split(mtd->file[i], " \n\t\0");
+		line = ft_split(mtd->map->data[i], " \n\t\0");
 		if (!line)
 			return (1);
 		j = -1;
@@ -68,16 +66,15 @@ int	get_mtd(t_mtd *mtd, char **id)
 		{
 			if (ft_cmpstr(line[0], id[j]) == 0)
 			{
-				if (mtd->txt[j].found == 0)
-				{
-					mtd->txt[j].found = 1;
-					mtd->txt[j].path = ft_straddstr(mtd->txt[j].path, line[1]);
-				}
+				if (mtd->txt[j] == NULL)
+					mtd->txt[j] = ft_straddstr(mtd->txt[j], line[1]);
 				else
 					return (p_er("there's already this texture"), 1);
+				break ;
 			}
-			
 		}
+		if (ft_cmpstr(line[0], id[j]) != 0)
+			return (p_er("there's something not required"), 1);
 	}
 	return (0);
 }
@@ -100,11 +97,21 @@ char	**id(void)
 
 int	check_file(char *path, t_mtd *mtd)
 {
+	int	i;
 
 	mtd->file = get_file(path);
 	if (!mtd->file)
 		return (1);
-	if (get_mtd(mtd, id()) != 0)
+	mtd->txt = ft_calloc(sizeof(char *), 7);
+	i = -1;
+	while (mtd->txt[++i])
+		mtd->txt[i] = NULL;
+	if (get_mtd(mtd, id(), -1) != 0)
 		return (1);
+	i = 0;
+	while (mtd->txt[i] != NULL)
+		i++;
+	if (mtd->txt[i] == NULL)
+		return (p_er("there's missing something"), 1);
 	return (0);
 }

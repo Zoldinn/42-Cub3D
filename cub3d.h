@@ -17,18 +17,11 @@ typedef struct s_map
 	int		start_map;
 }	t_map;
 
-typedef struct s_texture
-{
-	char	*path;
-	int		found;
-}			t_texture;
-
-
 typedef struct s_mtd
 {
-	char		**file;
-	t_texture	txt[6];
-	t_map		map;
+	char	**file;
+	char	**txt;
+	t_map	*map;
 }				t_mtd;
 
 /**========================================================================
