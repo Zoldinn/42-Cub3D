@@ -40,19 +40,21 @@ int	check_map_data(t_map *map, int i, int j, int x)
 		|| map->data[i][j] == ' ')
 			return (0);
 		else
-			return (printf("%c is not valid.\n", map->data[i][j]), 1);
+			return (printf("'%c' is not valid\n", map->data[i][j]), 1);
 	}
 	else
 	{
-		if ((i < 0 || i == map->rows)
-			|| j < 0 || map->data[i][j] == '\0')
-			return (printf("The borders of the map are not valid.\n"), 1);
+		if ((i < 0 || i == map->rows) || ((i + 1) == map->rows
+				&& map->data[i][j] == ' ') || j < 0 || map->data[i][j] == '\0')
+			return (printf("The borders of the map are not valid\n"), 1);
 		else if (map->data[i][j] == '0' || map->data[i][j] == '1'
 			|| map->data[i][j] == 'N' || map->data[i][j] == 'S'
 			|| map->data[i][j] == 'E' || map->data[i][j] == 'W')
 			return (0);
+		else if (map->data[i][j] == ' ')
+			return (printf("'%c' not valid next to '0'\n", map->data[i][j]), 1);
 		else
-			return (printf("%c is not valid.\n", map->data[i][j]), 1);
+			return (printf("'%c' is not valid\n", map->data[i][j]), 1);
 	}
 }
 
