@@ -11,8 +11,6 @@ typedef struct s_map
 {
 	char	**data;
 	char	**map;
-	char	*floor;
-	char	*ceiling;
 	int		rows;
 	int		start_map;
 }	t_map;
