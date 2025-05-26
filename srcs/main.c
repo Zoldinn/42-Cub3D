@@ -42,11 +42,11 @@ static int	check_args(int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
-	t_map	map;
+	t_mtd	mtd;
 
 	if (check_args(argc, argv) != 0)
 		return (1);
-	get_map(&map);
-	free_map(&map);
+	if (check_file(argv[1], &mtd) != 0)
+		return (1);
 	return (0);
 }

@@ -13,17 +13,19 @@ typedef struct s_map
 	int		rows;
 }	t_map;
 
-typedef struct s_file_arg
+typedef struct s_texture
 {
-	char	*id;
-	char	*arg;
-}			t_file_arg;
+	char	*path;
+	int		found;
+}			t_texture;
 
-typedef struct s_to_check
+
+typedef struct s_mtd
 {
-	t_file_arg	args[6];
+	char		**file;
+	t_texture	txt[6];
 	t_map		map;
-}				t_to_check;
+}				t_mtd;
 
 /**========================================================================
  *!                           CHECK ERRORS
@@ -34,11 +36,13 @@ int		check_extension(char *file_name);
  *========================================================================**/
 int		get_map(t_map *map);
 char	*get_next_line(int fd);
+int		check_file(char *path, t_mtd *mtd);
 /**========================================================================
  *!                               UTILS
  *========================================================================**/
 char	*ft_straddstr(char *s1, char *s2);
 void	free_db_array(char **arr);
+int		arrlen(char **arr);
 int		ft_check_atoi(const char *nptr);
 int		ft_cmpstr(char *s1, char *s2);
 void	p_er(char *str);

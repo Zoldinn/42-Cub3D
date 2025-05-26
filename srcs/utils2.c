@@ -14,3 +14,17 @@ int	ft_cmpstr(char *s1, char *s2)
 	}
 	return (1);
 }
+
+// -1 if arr == null
+// else return the nb of stringss
+int	arrlen(char **arr)
+{
+	int	i;
+
+	if (arr == NULL)
+		return (-1);
+	i = 0;
+	while (arr[i] != NULL)
+		i++;
+	return (i);
+}
