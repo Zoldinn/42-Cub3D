@@ -85,16 +85,18 @@ void	find_start_map(t_map *map, char **temp, int i)
 	char	**arr;
 	int		j;
 
-	while (i != 0)
+	while (i >= 0)
 	{
 		arr = ft_split(temp[i], " \n");
 		if (ft_strlen(arr[0]) < 3 && (ft_strchr(temp[i], '/') != NULL
 				|| ft_strchr(temp[i], ',') != NULL))
+		{
+			free_db_array(arr);
 			break ;
+		}
 		free_db_array(arr);
 		i--;
 	}
-	free_db_array(arr);
 	map->start_map = i;
 	map->map = ft_calloc((arrlen(temp) - i + 1), sizeof(char *));
 	map->data = ft_calloc((map->start_map + 2), sizeof(char *));
