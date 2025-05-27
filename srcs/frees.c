@@ -6,11 +6,10 @@ void	free_map(t_map *map)
 	free_db_array(map->map);
 }
 
-void	free_and_exit(t_map *map)
+void	free_and_exit(t_map *map, int code)
 {
-	printf("EXITING PROGRAM\n");
 	free_map(map);
-	exit(1);
+	exit(code);
 }
 
 void	free_db_array(char **arr)
