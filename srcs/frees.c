@@ -2,9 +2,9 @@
 
 void	free_map(t_map *map)
 {
-	free_db_array(map->data);
-	free_db_array(map->map);
-	free_db_array(map->txt);
+	free_arr(map->data);
+	free_arr(map->map);
+	free_arr(map->txt);
 }
 
 void	free_and_exit(t_map *map, int code)
@@ -13,7 +13,7 @@ void	free_and_exit(t_map *map, int code)
 	exit(code);
 }
 
-void	free_db_array(char **arr)
+void	free_arr(char **arr)
 {
 	int	i;
 
