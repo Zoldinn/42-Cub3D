@@ -97,14 +97,14 @@ void	find_start_map(t_map *map, char **temp, int i)
 }
 
 //read map in .cub format, put it in a char** and check if map is correct
-int	get_map(t_map *map)
+int	get_map(t_map *map, char *path)
 {
 	char	**temp;
 	char	*str;
 	char	*file_temp;
 	int		fd;
 
-	fd = open("./maps/default.cub", O_RDONLY);
+	fd = open(path, O_RDONLY);
 	if (fd == -1)
 		return (printf("error reading the file\n"), 1);
 	str = get_next_line(fd);

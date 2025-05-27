@@ -13,14 +13,18 @@ typedef struct s_map
 	char	**map;
 	int		rows;
 	int		start_map;
+	char	**txt;
 }	t_map;
 
-typedef struct s_mtd
+typedef enum e_id
 {
-	char	**file;
-	char	**txt;
-	t_map	*map;
-}				t_mtd;
+	NO,
+	SO,
+	WE,
+	EA,
+	F,
+	C
+}	t_id;
 
 /**========================================================================
  *!                           CHECK ERRORS
@@ -29,9 +33,9 @@ int		check_extension(char *file_name);
 /**========================================================================
  *!                              PARSING
  *========================================================================**/
-int		get_map(t_map *map);
+int		get_map(t_map *map, char *path);
 char	*get_next_line(int fd);
-int		check_file(char *path, t_mtd *mtd);
+int		check_file(char *path, t_map *map);
 /**========================================================================
  *!                               UTILS
  *========================================================================**/
