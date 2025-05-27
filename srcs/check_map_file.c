@@ -18,11 +18,11 @@ int	check_rgb_values(char *rgb[2])
 		{
 			value = ft_check_atoi(values[j]);
 			if (value < 0 || value > 255)
-				return (p_er("RGB values should be int [0;255]"), 1);
+				return (p_er("RGB should be [0;255]"), free_arr(values), 1);
 		}
 		if (j != 4)
-			return (p_er("RGB values are only 3 int"), 1);
-		free_db_array(values);
+			return (p_er("RGB values are only 3 int"), free_arr(values), 1);
+		free_arr(values);
 	}
 	return (0);
 }
@@ -45,13 +45,13 @@ int	get_data(t_map *map, char **id, int i)
 				if (map->txt[j] == NULL)
 					map->txt[j] = ft_straddstr(map->txt[j], line[1]);
 				else
-					return (p_er("there's already this texture"), 1);
+					return (p_er("multiple time a texture"), free_arr(line), 1);
 				break ;
 			}
 		}
 		if (ft_cmpstr(line[0], id[j]) != 0)
-			return (p_er("there's something not required"), 1);
-		free_db_array(line);
+			return (p_er("there's something not required"), free_arr(line), 1);
+		free_arr(line);
 	}
 	return (free(id), 0);
 }
@@ -78,12 +78,11 @@ int	check_file(char *path, t_map *map)
 	int		count;
 	char	*rgb[2];
 
-	if (get_map(map, path) != 0)
-		return (1);
+	if (get_map(map, path) != 0 || map->data == NULL || map->map == NULL)
+		return (p_er("Failed get the file"), 1);
 	map->txt = ft_calloc(sizeof(char *), 7);
-	i = -1;
-	while (map->txt[++i])
-		map->txt[i] = NULL;
+	if (!map->txt)
+		return (1);
 	if (get_data(map, ids(), -1) != 0)
 		return (1);
 	i = -1;
@@ -91,7 +90,7 @@ int	check_file(char *path, t_map *map)
 	while (map->txt[++i])
 		count++;
 	if (count != 6)
-		return (p_er("there's missing something"), 1);
+		return (p_er("there's something missing"), 1);
 	rgb[0] = map->data[4];
 	rgb[1] = map->data[5];
 	if (check_rgb_values(rgb) != 0)

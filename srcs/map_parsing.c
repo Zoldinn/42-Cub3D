@@ -93,10 +93,10 @@ void	find_start_map(t_map *map, char **temp, int i)
 		{
 			free_db_array(arr);
 			break ;
-		}
-		free_db_array(arr);
+		free_arr(arr);
 		i--;
 	}
+	free_arr(arr);
 	map->start_map = i;
 	map->map = ft_calloc((arrlen(temp) - i + 1), sizeof(char *));
 	map->data = ft_calloc((map->start_map + 2), sizeof(char *));
@@ -156,7 +156,7 @@ int	get_map(t_map *map, char *path)
 	{
 		temp = ft_split(file_temp, "\n");
 		find_start_map(map, temp, arrlen(temp) - 1);
-		free_db_array(temp);
+		free_arr(temp);
 		free(file_temp);
 		print_datas_and_map(map);
 		check_map(map);

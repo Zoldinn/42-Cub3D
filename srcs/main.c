@@ -48,9 +48,9 @@ int	main(int argc, char **argv)
 
 	init_map(&map);
 	if (check_args(argc, argv) != 0)
-		return (1);
+		return (free_map(&map), 1);
 	if (check_file(argv[1], &map) != 0)
-		return (1);
+		return (free_map(&map), 1);
 	free_map(&map);
 	return (0);
 }
