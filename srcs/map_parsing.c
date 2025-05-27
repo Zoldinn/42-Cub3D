@@ -35,18 +35,18 @@ void	get_check_map_map(t_map *map, int i, int j)
 	if (map->map[i][j] != '0')
 	{
 		if (check_map_map(map, i, j, 1) == 1)
-			free_and_exit(map);
+			free_and_exit(map, 1);
 	}
 	else
 	{
 		if (check_map_map(map, i + 1, j, 0) == 1)
-			free_and_exit(map);
+			free_and_exit(map, 1);
 		if (check_map_map(map, i - 1, j, 0) == 1)
-			free_and_exit(map);
+			free_and_exit(map, 1);
 		if (check_map_map(map, i, j + 1, 0) == 1)
-			free_and_exit(map);
+			free_and_exit(map, 1);
 		if (check_map_map(map, i, j - 1, 0) == 1)
-			free_and_exit(map);
+			free_and_exit(map, 1);
 	}
 }
 
@@ -68,17 +68,19 @@ void	check_map(t_map *map)
 	}
 }
 
+//get map and datas from file and put it in map structure
 void	find_start_map(t_map *map, char **temp, int i)
 {
 	char	**arr;
 	int		j;
 
-	while (--i != 0)
+	while (i != 0)
 	{
 		arr = ft_split(temp[i], " \n");
 		if (ft_strlen(arr[0]) < 3)
 			break ;
 		free_db_array(arr);
+		i--;
 	}
 	free_db_array(arr);
 	map->start_map = i;
@@ -92,12 +94,31 @@ void	find_start_map(t_map *map, char **temp, int i)
 	}
 	i = -1;
 	j = -1;
-	while (i++ <= map->start_map)
+	while (i++ < map->start_map)
 		map->data[++j] = ft_strdup(temp[i]);
 }
 
-//read map in .cub format, put it in a char** and check if map is correct
-int	get_map(t_map *map, char *path)
+void	print_datas_and_map(t_map *map)
+{
+	int	i;
+
+	i = 0;
+	while (map->data[i])
+	{
+		printf("%s\n", map->data[i]);
+		i++;
+	}
+	printf("------------------------------\n");
+	i = 0;
+	while (map->map[i])
+	{
+		printf("%s\n", map->map[i]);
+		i++;
+	}
+}
+
+//read map and datas from file
+int	get_map(t_map *map)
 {
 	char	**temp;
 	char	*str;
@@ -118,9 +139,10 @@ int	get_map(t_map *map, char *path)
 	}
 	close(fd);
 	temp = ft_split(file_temp, "\n");
-	find_start_map(map, temp, arrlen(temp));
+	find_start_map(map, temp, arrlen(temp) - 1);
 	free_db_array(temp);
 	free(file_temp);
+	print_datas_and_map(map);
 	check_map(map);
 	return (0);
 }

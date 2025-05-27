@@ -45,7 +45,7 @@ char	*get_next_line(int fd);
  *!                               FREE
  *========================================================================**/
 void	free_db_array(char **arr);
-void	free_and_exit(t_map *map);
+void	free_and_exit(t_map *map, int code);
 void	free_map(t_map *map);
 int		arrlen(char **arr);
 int		ft_check_atoi(const char *nptr);
