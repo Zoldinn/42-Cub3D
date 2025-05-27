@@ -2,9 +2,12 @@
 
 void	free_map(t_map *map)
 {
-	free_db_array(map->data);
-	free_db_array(map->map);
-	free_db_array(map->txt);
+	if (map->data)
+		free_db_array(map->data);
+	if (map->map)
+		free_db_array(map->map);
+	if (map->txt)
+		free_db_array(map->txt);
 }
 
 void	free_and_exit(t_map *map, int code)

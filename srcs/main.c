@@ -35,10 +35,18 @@ static int	check_args(int argc, char **argv)
 	return (0);
 }
 
+void	init_map(t_map *map)
+{
+	map->data = NULL;
+	map->map = NULL;
+	map->txt = NULL;
+}
+
 int	main(int argc, char **argv)
 {
 	t_map map;
 
+	init_map(&map);
 	if (check_args(argc, argv) != 0)
 		return (1);
 	if (check_file(argv[1], &map) != 0)

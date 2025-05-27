@@ -18,21 +18,23 @@ int	check_map_map(t_map *map, int i, int j, int x)
 	{
 		if ((i < 0 || i == map->rows) || ((i + 1) == map->rows
 				&& map->map[i][j] == ' ') || j < 0 || map->map[i][j] == '\0')
-			return (printf("The borders of the map are not valid\n"), 1);
+			return (printf("Error\nThe borders of the map are not valid\n"), 1);
 		else if (map->map[i][j] == '0' || map->map[i][j] == '1'
 			|| map->map[i][j] == 'N' || map->map[i][j] == 'S'
 			|| map->map[i][j] == 'E' || map->map[i][j] == 'W')
 			return (0);
 		else if (map->map[i][j] == ' ')
-			return (printf("'%c' not valid next to '0'\n", map->map[i][j]), 1);
+			return (printf("Error\n'%c' not valid next to '0'\n",
+					map->map[i][j]), 1);
 		else
-			return (printf("'%c' is not valid\n", map->map[i][j]), 1);
+			return (printf("Error\n'%c' is not valid\n", map->map[i][j]), 1);
 	}
 }
 
 void	get_check_map_map(t_map *map, int i, int j)
 {
-	if (map->map[i][j] != '0')
+	if (map->map[i][j] != '0' && map->map[i][j] != 'N' && map->map[i][j] != 'S'
+		&& map->map[i][j] != 'E' && map->map[i][j] != 'W')
 	{
 		if (check_map_map(map, i, j, 1) == 1)
 			free_and_exit(map, 1);
@@ -54,18 +56,27 @@ void	check_map(t_map *map)
 {
 	int	i;
 	int	j;
+	int	count_player;
 
 	i = 0;
+	count_player = 0;
 	while (i < map->rows)
 	{
 		j = 0;
 		while (map->map[i][j])
 		{
+			if (map->map[i][j] == 'N' || map->map[i][j] == 'S'
+				|| map->map[i][j] == 'E' || map->map[i][j] == 'W')
+				count_player++;
+			if (count_player > 1)
+				return (p_er("Too many players\n"), free_and_exit(map, 1));
 			get_check_map_map(map, i, j);
 			j++;
 		}
 		i++;
 	}
+	if (count_player == 0)
+		return (p_er("No player detected\n"), free_and_exit(map, 1));
 }
 
 //get map and datas from file and put it in map structure
@@ -78,7 +89,7 @@ void	find_start_map(t_map *map, char **temp, int i)
 	{
 		arr = ft_split(temp[i], " \n");
 		if (ft_strlen(arr[0]) < 3 && (ft_strchr(temp[i], '/') != NULL
-			|| ft_strchr(temp[i], ',') != NULL))
+				|| ft_strchr(temp[i], ',') != NULL))
 			break ;
 		free_db_array(arr);
 		i--;
@@ -139,11 +150,14 @@ int	get_map(t_map *map, char *path)
 		str = get_next_line(fd);
 	}
 	close(fd);
-	temp = ft_split(file_temp, "\n");
-	find_start_map(map, temp, arrlen(temp) - 1);
-	free_db_array(temp);
-	free(file_temp);
-	print_datas_and_map(map);
-	check_map(map);
+	if (file_temp)
+	{
+		temp = ft_split(file_temp, "\n");
+		find_start_map(map, temp, arrlen(temp) - 1);
+		free_db_array(temp);
+		free(file_temp);
+		print_datas_and_map(map);
+		check_map(map);
+	}
 	return (0);
 }
