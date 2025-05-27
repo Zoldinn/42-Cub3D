@@ -53,7 +53,7 @@ int	get_data(t_map *map, char **id, int i)
 			return (p_er("there's something not required"), free_arr(line), 1);
 		free_arr(line);
 	}
-	return (free(id), 0);
+	return (0);
 }
 
 char	**ids(void)
@@ -77,14 +77,17 @@ int	check_file(char *path, t_map *map)
 	int		i;
 	int		count;
 	char	*rgb[2];
+	char	**id;
 
 	if (get_map(map, path) != 0 || map->data == NULL || map->map == NULL)
-		return (p_er("Failed get the file"), 1);
+		return (p_er("Failed to get the file"), 1);
 	map->txt = ft_calloc(sizeof(char *), 7);
 	if (!map->txt)
 		return (1);
-	if (get_data(map, ids(), -1) != 0)
-		return (1);
+	id = ids();
+	if (get_data(map, id, -1) != 0)
+		return (free(id), 1);
+	free(id);
 	i = -1;
 	count = 0;
 	while (map->txt[++i])
