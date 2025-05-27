@@ -43,7 +43,7 @@ int	get_data(t_map *map, char **id, int i)
 			if (ft_cmpstr(line[0], id[j]) == 0)
 			{
 				if (map->txt[j] == NULL)
-					map->txt[j] = ft_straddstr(map->txt[j], line[1]);
+					map->txt[j] = ft_strdup(line[1]);
 				else
 					return (p_er("multiple time a texture"), free_arr(line), 1);
 				break ;
