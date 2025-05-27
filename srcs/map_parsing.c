@@ -154,7 +154,7 @@ int	get_map(t_map *map, char *path)
 	{
 		temp = ft_split(file_temp, "\n");
 		find_start_map(map, temp, arrlen(temp) - 1);
-		free_db_array(temp);
+		free_arr(temp);
 		free(file_temp);
 		print_datas_and_map(map);
 		check_map(map);
