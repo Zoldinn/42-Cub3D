@@ -10,18 +10,19 @@ int	check_rgb_values(char *rgb[2])
 	i = -1;
 	while (++i < 2)
 	{
-		values = ft_split(rgb[i], ",");
+		values = ft_split(rgb[i], " ,");
 		if (!values)
 			return (p_er("Failed split rgb values"), 1);
-		j = -1;
-		while (values[++j] && j < 3)
+		j = 0;
+		while (values[++j])
 		{
 			value = ft_check_atoi(values[j]);
 			if (value < 0 || value > 255)
 				return (p_er("RGB values should be int [0;255]"), 1);
 		}
-		if (j != 3)
+		if (j != 4)
 			return (p_er("RGB values are only 3 int"), 1);
+		free_db_array(values);
 	}
 	return (0);
 }
@@ -50,24 +51,24 @@ int	get_data(t_map *map, char **id, int i)
 		}
 		if (ft_cmpstr(line[0], id[j]) != 0)
 			return (p_er("there's something not required"), 1);
+		free_db_array(line);
 	}
-	free_db_array(id);
-	return (0);
+	return (free(id), 0);
 }
 
-char	**id(void)
+char	**ids(void)
 {
 	char	**id;
 
 	id = ft_calloc(sizeof(char *), 7);
 	if (!id)
 		return (NULL);
-	id[NO] = "NO";
-	id[SO] = "SO";
-	id[WE] = "WE";
-	id[EA] = "EA";
-	id[F] = "F";
-	id[C] = "C";
+	id[0] = "NO";
+	id[1] = "SO";
+	id[2] = "WE";
+	id[3] = "EA";
+	id[4] = "F";
+	id[5] = "C";
 	return (id);
 }
 
@@ -83,7 +84,7 @@ int	check_file(char *path, t_map *map)
 	i = -1;
 	while (map->txt[++i])
 		map->txt[i] = NULL;
-	if (get_data(map, id(), -1) != 0)
+	if (get_data(map, ids(), -1) != 0)
 		return (1);
 	i = -1;
 	count = 0;
@@ -91,8 +92,8 @@ int	check_file(char *path, t_map *map)
 		count++;
 	if (count != 6)
 		return (p_er("there's missing something"), 1);
-	rgb[0] = map->data[F];
-	rgb[1] = map->data[C];
+	rgb[0] = map->data[4];
+	rgb[1] = map->data[5];
 	if (check_rgb_values(rgb) != 0)
 		return (1);
 	return (0);

@@ -43,5 +43,6 @@ int	main(int argc, char **argv)
 		return (1);
 	if (check_file(argv[1], &map) != 0)
 		return (1);
+	free_map(&map);
 	return (0);
 }

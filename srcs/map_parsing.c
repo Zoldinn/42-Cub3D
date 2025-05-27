@@ -118,7 +118,7 @@ void	print_datas_and_map(t_map *map)
 }
 
 //read map and datas from file
-int	get_map(t_map *map)
+int	get_map(t_map *map, char *path)
 {
 	char	**temp;
 	char	*str;
