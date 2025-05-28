@@ -28,3 +28,26 @@ int	arrlen(char **arr)
 		i++;
 	return (i);
 }
+
+char	*get_txt(char *id, t_map *map)
+{
+	int		i;
+	char	**split;
+	char	*res;
+
+	i = -1;
+	while (map->txt[++i])
+	{
+		printf("txt : %s\n", map->txt[i]);
+		if (ft_strnstr(map->txt[i], id, ft_strlen(map->txt[i])) != NULL)
+		{
+			split = ft_split(map->txt[i], " \t");
+			if (!split)
+				return (printf("erreur split\n"), NULL);
+			res = NULL;
+			res = ft_straddstr(res, split[1]);
+			return (free_arr(split), res);
+		}
+	}
+	return (printf("not found\n"), NULL);
+}

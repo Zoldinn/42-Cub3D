@@ -1,0 +1,3205 @@
+[0;34mMAP: maps/edge.cub[0m
+==209998== Memcheck, a memory error detector
+==209998== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==209998== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==209998== Command: ./cub3d maps/edge.cub
+==209998== 
+[31mERROR:
+[0mthere's something missing
+------------------------------
+        1111111111111111111111111
+        1000000000110000000000001
+        1011000001110000000000001
+        1001000000000000000000001
+111111111011000001110000000000001
+100000000011000001010111111111111
+11110111111111011100000010001
+11110111111111011101010010001
+11000000110101011100000010001
+10000000000000001100000010001
+10000000000000001101010010001
+11000001110101011111011110N01
+1111011111110101 101111000001
+111111 111111111 111111111111
+==209998== 
+==209998== HEAP SUMMARY:
+==209998==     in use at exit: 0 bytes in 0 blocks
+==209998==   total heap usage: 93 allocs, 93 frees, 9,908 bytes allocated
+==209998== 
+==209998== All heap blocks were freed -- no leaks are possible
+==209998== 
+==209998== For lists of detected and suppressed errors, rerun with: -s
+==209998== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/color_invalid_rgb.cub[0m
+==209999== Memcheck, a memory error detector
+==209999== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==209999== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==209999== Command: ./cub3d maps/bad/color_invalid_rgb.cub
+==209999== 
+[31mERROR:
+[0mRGB should be [0;255]
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,-20
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+==209999== 
+==209999== HEAP SUMMARY:
+==209999==     in use at exit: 0 bytes in 0 blocks
+==209999==   total heap usage: 144 allocs, 144 frees, 9,034 bytes allocated
+==209999== 
+==209999== All heap blocks were freed -- no leaks are possible
+==209999== 
+==209999== For lists of detected and suppressed errors, rerun with: -s
+==209999== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/color_missing.cub[0m
+==210000== Memcheck, a memory error detector
+==210000== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210000== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210000== Command: ./cub3d maps/bad/color_missing.cub
+==210000== 
+[31mERROR:
+[0mthere's something missing
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+==210000== 
+==210000== HEAP SUMMARY:
+==210000==     in use at exit: 0 bytes in 0 blocks
+==210000==   total heap usage: 131 allocs, 131 frees, 8,583 bytes allocated
+==210000== 
+==210000== All heap blocks were freed -- no leaks are possible
+==210000== 
+==210000== For lists of detected and suppressed errors, rerun with: -s
+==210000== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/color_missing_ceiling_rgb.cub[0m
+==210001== Memcheck, a memory error detector
+==210001== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210001== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210001== Command: ./cub3d maps/bad/color_missing_ceiling_rgb.cub
+==210001== 
+[31mERROR:
+[0mRGB values are only 3 int
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+==210001== 
+==210001== HEAP SUMMARY:
+==210001==     in use at exit: 0 bytes in 0 blocks
+==210001==   total heap usage: 148 allocs, 148 frees, 8,991 bytes allocated
+==210001== 
+==210001== All heap blocks were freed -- no leaks are possible
+==210001== 
+==210001== For lists of detected and suppressed errors, rerun with: -s
+==210001== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/color_missing_floor_rgb.cub[0m
+==210002== Memcheck, a memory error detector
+==210002== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210002== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210002== Command: ./cub3d maps/bad/color_missing_floor_rgb.cub
+==210002== 
+[31mERROR:
+[0mRGB values are only 3 int
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+==210002== 
+==210002== HEAP SUMMARY:
+==210002==     in use at exit: 0 bytes in 0 blocks
+==210002==   total heap usage: 143 allocs, 143 frees, 8,938 bytes allocated
+==210002== 
+==210002== All heap blocks were freed -- no leaks are possible
+==210002== 
+==210002== For lists of detected and suppressed errors, rerun with: -s
+==210002== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/color_none.cub[0m
+==210003== Memcheck, a memory error detector
+==210003== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210003== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210003== Command: ./cub3d maps/bad/color_none.cub
+==210003== 
+[31mERROR:
+[0mthere's something missing
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+==210003== 
+==210003== HEAP SUMMARY:
+==210003==     in use at exit: 0 bytes in 0 blocks
+==210003==   total heap usage: 121 allocs, 121 frees, 8,044 bytes allocated
+==210003== 
+==210003== All heap blocks were freed -- no leaks are possible
+==210003== 
+==210003== For lists of detected and suppressed errors, rerun with: -s
+==210003== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/empty.cub[0m
+==210004== Memcheck, a memory error detector
+==210004== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210004== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210004== Command: ./cub3d maps/bad/empty.cub
+==210004== 
+[31mERROR:
+[0mFailed to get the file
+==210004== 
+==210004== HEAP SUMMARY:
+==210004==     in use at exit: 0 bytes in 0 blocks
+==210004==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==210004== 
+==210004== All heap blocks were freed -- no leaks are possible
+==210004== 
+==210004== For lists of detected and suppressed errors, rerun with: -s
+==210004== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/file_letter_end.cub[0m
+==210005== Memcheck, a memory error detector
+==210005== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210005== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210005== Command: ./cub3d maps/bad/file_letter_end.cub
+==210005== 
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+1
+[32mParsing ok ![0m==210005== 
+==210005== HEAP SUMMARY:
+==210005==     in use at exit: 0 bytes in 0 blocks
+==210005==   total heap usage: 181 allocs, 181 frees, 12,205 bytes allocated
+==210005== 
+==210005== All heap blocks were freed -- no leaks are possible
+==210005== 
+==210005== For lists of detected and suppressed errors, rerun with: -s
+==210005== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/map_first.cub[0m
+==210006== Memcheck, a memory error detector
+==210006== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210006== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210006== Command: ./cub3d maps/bad/map_first.cub
+==210006== 
+[31mERROR:
+[0mNo player detected
+
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+==210006== 
+==210006== HEAP SUMMARY:
+==210006==     in use at exit: 0 bytes in 0 blocks
+==210006==   total heap usage: 87 allocs, 87 frees, 6,941 bytes allocated
+==210006== 
+==210006== All heap blocks were freed -- no leaks are possible
+==210006== 
+==210006== For lists of detected and suppressed errors, rerun with: -s
+==210006== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/map_middle.cub[0m
+==210007== Memcheck, a memory error detector
+==210007== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210007== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210007== Command: ./cub3d maps/bad/map_middle.cub
+==210007== 
+[31mERROR:
+[0mNo player detected
+
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+F 20,20,20
+C 200,200,200
+------------------------------
+==210007== 
+==210007== HEAP SUMMARY:
+==210007==     in use at exit: 0 bytes in 0 blocks
+==210007==   total heap usage: 91 allocs, 91 frees, 8,477 bytes allocated
+==210007== 
+==210007== All heap blocks were freed -- no leaks are possible
+==210007== 
+==210007== For lists of detected and suppressed errors, rerun with: -s
+==210007== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/map_missing.cub[0m
+==210008== Memcheck, a memory error detector
+==210008== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210008== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210008== Command: ./cub3d maps/bad/map_missing.cub
+==210008== 
+[31mERROR:
+[0mNo player detected
+
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+==210008== 
+==210008== HEAP SUMMARY:
+==210008==     in use at exit: 0 bytes in 0 blocks
+==210008==   total heap usage: 35 allocs, 35 frees, 5,430 bytes allocated
+==210008== 
+==210008== All heap blocks were freed -- no leaks are possible
+==210008== 
+==210008== For lists of detected and suppressed errors, rerun with: -s
+==210008== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/map_only.cub[0m
+==210009== Memcheck, a memory error detector
+==210009== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210009== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210009== Command: ./cub3d maps/bad/map_only.cub
+==210009== 
+[31mERROR:
+[0mthere's something missing
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+==210009== 
+==210009== HEAP SUMMARY:
+==210009==     in use at exit: 0 bytes in 0 blocks
+==210009==   total heap usage: 84 allocs, 84 frees, 5,540 bytes allocated
+==210009== 
+==210009== All heap blocks were freed -- no leaks are possible
+==210009== 
+==210009== For lists of detected and suppressed errors, rerun with: -s
+==210009== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/map_too_small.cub[0m
+==210010== Memcheck, a memory error detector
+==210010== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210010== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210010== Command: ./cub3d maps/bad/map_too_small.cub
+==210010== 
+[31mERROR:
+[0mNo player detected
+
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+111
+111
+==210010== 
+==210010== HEAP SUMMARY:
+==210010==     in use at exit: 0 bytes in 0 blocks
+==210010==   total heap usage: 47 allocs, 47 frees, 5,808 bytes allocated
+==210010== 
+==210010== All heap blocks were freed -- no leaks are possible
+==210010== 
+==210010== For lists of detected and suppressed errors, rerun with: -s
+==210010== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/player_multiple.cub[0m
+==210011== Memcheck, a memory error detector
+==210011== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210011== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210011== Command: ./cub3d maps/bad/player_multiple.cub
+==210011== 
+[31mERROR:
+[0mToo many players
+
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11E01
+10001
+10001
+10001
+10001
+10001
+11111
+==210011== 
+==210011== HEAP SUMMARY:
+==210011==     in use at exit: 0 bytes in 0 blocks
+==210011==   total heap usage: 113 allocs, 113 frees, 8,459 bytes allocated
+==210011== 
+==210011== All heap blocks were freed -- no leaks are possible
+==210011== 
+==210011== For lists of detected and suppressed errors, rerun with: -s
+==210011== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/player_none.cub[0m
+==210012== Memcheck, a memory error detector
+==210012== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210012== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210012== Command: ./cub3d maps/bad/player_none.cub
+==210012== 
+[31mERROR:
+[0mNo player detected
+
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+11111
+10001
+10001
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+==210012== 
+==210012== HEAP SUMMARY:
+==210012==     in use at exit: 0 bytes in 0 blocks
+==210012==   total heap usage: 113 allocs, 113 frees, 8,459 bytes allocated
+==210012== 
+==210012== All heap blocks were freed -- no leaks are possible
+==210012== 
+==210012== For lists of detected and suppressed errors, rerun with: -s
+==210012== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/player_on_edge.cub[0m
+==210014== Memcheck, a memory error detector
+==210014== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210014== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210014== Command: ./cub3d maps/bad/player_on_edge.cub
+==210014== 
+[31mERROR:
+[0mThe borders of the map are not valid
+
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+1S111
+10001
+10001
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+==210014== 
+==210014== HEAP SUMMARY:
+==210014==     in use at exit: 0 bytes in 0 blocks
+==210014==   total heap usage: 113 allocs, 113 frees, 8,459 bytes allocated
+==210014== 
+==210014== All heap blocks were freed -- no leaks are possible
+==210014== 
+==210014== For lists of detected and suppressed errors, rerun with: -s
+==210014== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/textures_dir.cub[0m
+==210015== Memcheck, a memory error detector
+==210015== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210015== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210015== Command: ./cub3d maps/bad/textures_dir.cub
+==210015== 
+[31mERROR:
+[0mNO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/
+F 20,20,20
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+file type isn't .xpm
+==210015== 
+==210015== HEAP SUMMARY:
+==210015==     in use at exit: 0 bytes in 0 blocks
+==210015==   total heap usage: 149 allocs, 149 frees, 8,882 bytes allocated
+==210015== 
+==210015== All heap blocks were freed -- no leaks are possible
+==210015== 
+==210015== For lists of detected and suppressed errors, rerun with: -s
+==210015== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/textures_duplicates.cub[0m
+==210016== Memcheck, a memory error detector
+==210016== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210016== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210016== Command: ./cub3d maps/bad/textures_duplicates.cub
+==210016== 
+[31mERROR:
+[0mmultiple time a texture
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+==210016== 
+==210016== HEAP SUMMARY:
+==210016==     in use at exit: 0 bytes in 0 blocks
+==210016==   total heap usage: 138 allocs, 138 frees, 9,587 bytes allocated
+==210016== 
+==210016== All heap blocks were freed -- no leaks are possible
+==210016== 
+==210016== For lists of detected and suppressed errors, rerun with: -s
+==210016== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/textures_invalid.cub[0m
+==210017== Memcheck, a memory error detector
+==210017== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210017== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210017== Command: ./cub3d maps/bad/textures_invalid.cub
+==210017== 
+[31mERROR:
+[0mNO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/x
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+file type isn't .xpm
+==210017== 
+==210017== HEAP SUMMARY:
+==210017==     in use at exit: 0 bytes in 0 blocks
+==210017==   total heap usage: 149 allocs, 149 frees, 8,898 bytes allocated
+==210017== 
+==210017== All heap blocks were freed -- no leaks are possible
+==210017== 
+==210017== For lists of detected and suppressed errors, rerun with: -s
+==210017== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/textures_missing.cub[0m
+==210018== Memcheck, a memory error detector
+==210018== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210018== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210018== Command: ./cub3d maps/bad/textures_missing.cub
+==210018== 
+[31mERROR:
+[0mthere's something missing
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+==210018== 
+==210018== HEAP SUMMARY:
+==210018==     in use at exit: 0 bytes in 0 blocks
+==210018==   total heap usage: 131 allocs, 131 frees, 8,220 bytes allocated
+==210018== 
+==210018== All heap blocks were freed -- no leaks are possible
+==210018== 
+==210018== For lists of detected and suppressed errors, rerun with: -s
+==210018== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/textures_none.cub[0m
+==210019== Memcheck, a memory error detector
+==210019== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210019== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210019== Command: ./cub3d maps/bad/textures_none.cub
+==210019== 
+[31mERROR:
+[0mthere's something missing
+F 20,20,20
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+==210019== 
+==210019== HEAP SUMMARY:
+==210019==     in use at exit: 0 bytes in 0 blocks
+==210019==   total heap usage: 105 allocs, 105 frees, 6,186 bytes allocated
+==210019== 
+==210019== All heap blocks were freed -- no leaks are possible
+==210019== 
+==210019== For lists of detected and suppressed errors, rerun with: -s
+==210019== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/textures_not_xpm.cub[0m
+==210020== Memcheck, a memory error detector
+==210020== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210020== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210020== Command: ./cub3d maps/bad/textures_not_xpm.cub
+==210020== 
+[31mERROR:
+[0mNO textures/test/north
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+file type isn't .xpm
+==210020== 
+==210020== HEAP SUMMARY:
+==210020==     in use at exit: 0 bytes in 0 blocks
+==210020==   total heap usage: 149 allocs, 149 frees, 8,962 bytes allocated
+==210020== 
+==210020== All heap blocks were freed -- no leaks are possible
+==210020== 
+==210020== For lists of detected and suppressed errors, rerun with: -s
+==210020== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/wall_hole_east.cub[0m
+==210021== Memcheck, a memory error detector
+==210021== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210021== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210021== Command: ./cub3d maps/bad/wall_hole_east.cub
+==210021== 
+[31mERROR:
+[0mThe borders of the map are not valid
+
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11000
+10001
+10001
+10001
+10001
+10001
+11111
+==210021== 
+==210021== HEAP SUMMARY:
+==210021==     in use at exit: 0 bytes in 0 blocks
+==210021==   total heap usage: 113 allocs, 113 frees, 8,459 bytes allocated
+==210021== 
+==210021== All heap blocks were freed -- no leaks are possible
+==210021== 
+==210021== For lists of detected and suppressed errors, rerun with: -s
+==210021== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/wall_hole_north.cub[0m
+==210022== Memcheck, a memory error detector
+==210022== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210022== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210022== Command: ./cub3d maps/bad/wall_hole_north.cub
+==210022== 
+[31mERROR:
+[0mThe borders of the map are not valid
+
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+11011
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+==210022== 
+==210022== HEAP SUMMARY:
+==210022==     in use at exit: 0 bytes in 0 blocks
+==210022==   total heap usage: 113 allocs, 113 frees, 8,459 bytes allocated
+==210022== 
+==210022== All heap blocks were freed -- no leaks are possible
+==210022== 
+==210022== For lists of detected and suppressed errors, rerun with: -s
+==210022== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/wall_hole_south.cub[0m
+==210023== Memcheck, a memory error detector
+==210023== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210023== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210023== Command: ./cub3d maps/bad/wall_hole_south.cub
+==210023== 
+[31mERROR:
+[0mThe borders of the map are not valid
+
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11011
+==210023== 
+==210023== HEAP SUMMARY:
+==210023==     in use at exit: 0 bytes in 0 blocks
+==210023==   total heap usage: 113 allocs, 113 frees, 8,459 bytes allocated
+==210023== 
+==210023== All heap blocks were freed -- no leaks are possible
+==210023== 
+==210023== For lists of detected and suppressed errors, rerun with: -s
+==210023== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/wall_hole_west.cub[0m
+==210024== Memcheck, a memory error detector
+==210024== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210024== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210024== Command: ./cub3d maps/bad/wall_hole_west.cub
+==210024== 
+[31mERROR:
+[0mThe borders of the map are not valid
+
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+00001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+==210024== 
+==210024== HEAP SUMMARY:
+==210024==     in use at exit: 0 bytes in 0 blocks
+==210024==   total heap usage: 113 allocs, 113 frees, 8,459 bytes allocated
+==210024== 
+==210024== All heap blocks were freed -- no leaks are possible
+==210024== 
+==210024== For lists of detected and suppressed errors, rerun with: -s
+==210024== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/wall_none.cub[0m
+==210025== Memcheck, a memory error detector
+==210025== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210025== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210025== Command: ./cub3d maps/bad/wall_none.cub
+==210025== 
+[31mERROR:
+[0mThe borders of the map are not valid
+
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+00000
+00000
+00S00
+00000
+00000
+00000
+00000
+00000
+00000
+00000
+00000
+00000
+00000
+==210025== 
+==210025== HEAP SUMMARY:
+==210025==     in use at exit: 0 bytes in 0 blocks
+==210025==   total heap usage: 113 allocs, 113 frees, 8,459 bytes allocated
+==210025== 
+==210025== All heap blocks were freed -- no leaks are possible
+==210025== 
+==210025== For lists of detected and suppressed errors, rerun with: -s
+==210025== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/cheese_maze.cub[0m
+==210026== Memcheck, a memory error detector
+==210026== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210026== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210026== Command: ./cub3d maps/good/cheese_maze.cub
+==210026== 
+NO textures/simonkraft/wet_sponge.xpm
+SO textures/simonkraft/wet_sponge.xpm
+WE textures/simonkraft/wet_sponge.xpm
+EA textures/simonkraft/wet_sponge.xpm
+F 164,169,20
+C 153,204,255
+------------------------------
+111111111111111111111
+101000001000000000001
+101010101011111110001
+100010100010000010001
+111110101111101011101
+100000101000101000001
+101111101011101111111
+101000001010100000101
+101011111010111110101
+101010001010100010101
+101110101010101010101
+100000101010001010001
+111111101011111011101
+100000101000100010001
+101110101110101110111
+101000100000100010101
+101011111111111010101
+100010000000000010001
+101010111011111111101
+1N1000001000000000001
+111111111111111111111
+[32mParsing ok ![0m==210026== 
+==210026== HEAP SUMMARY:
+==210026==     in use at exit: 0 bytes in 0 blocks
+==210026==   total heap usage: 199 allocs, 199 frees, 18,674 bytes allocated
+==210026== 
+==210026== All heap blocks were freed -- no leaks are possible
+==210026== 
+==210026== For lists of detected and suppressed errors, rerun with: -s
+==210026== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/creepy.cub[0m
+==210027== Memcheck, a memory error detector
+==210027== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210027== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210027== Command: ./cub3d maps/good/creepy.cub
+==210027== 
+NO textures/simonkraft/respawn_anchor_side0.xpm
+EA textures/simonkraft/respawn_anchor_side2.xpm
+SO textures/simonkraft/respawn_anchor_side4.xpm
+WE textures/simonkraft/respawn_anchor_side3.xpm
+C 35,19,73
+F 15,6,40
+------------------------------
+111111111111111
+111111000111111
+111110000011111
+1111000N0001111
+111000000000111
+110000000000011
+100001111100001
+110000111000011
+111000010000111
+111100000001111
+111110000011111
+111111000111111
+111111111111111
+[32mParsing ok ![0m==210027== 
+==210027== HEAP SUMMARY:
+==210027==     in use at exit: 0 bytes in 0 blocks
+==210027==   total heap usage: 151 allocs, 151 frees, 12,940 bytes allocated
+==210027== 
+==210027== All heap blocks were freed -- no leaks are possible
+==210027== 
+==210027== For lists of detected and suppressed errors, rerun with: -s
+==210027== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/dungeon.cub[0m
+==210028== Memcheck, a memory error detector
+==210028== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210028== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210028== Command: ./cub3d maps/good/dungeon.cub
+==210028== 
+[31mERROR:
+[0mRGB should be [0;255]
+F 76,76,76
+C 99,99,99
+NO textures/simonkraft/cobblestone.xpm
+SO textures/simonkraft/cobblestone_01.xpm
+WE textures/simonkraft/mossy_cobblestone1.xpm
+EA textures/simonkraft/cobblestone_02.xpm
+------------------------------
+1111111111111111111
+10W1001001001000001
+1011000001000001001
+1001001001111101111
+1001111000001001001
+1000000000000001001
+1001111111111001001
+1111000000000001011
+1000000001000000001
+1111111111111111111
+==210028== 
+==210028== HEAP SUMMARY:
+==210028==     in use at exit: 0 bytes in 0 blocks
+==210028==   total heap usage: 126 allocs, 126 frees, 10,897 bytes allocated
+==210028== 
+==210028== All heap blocks were freed -- no leaks are possible
+==210028== 
+==210028== For lists of detected and suppressed errors, rerun with: -s
+==210028== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/library.cub[0m
+==210029== Memcheck, a memory error detector
+==210029== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210029== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210029== Command: ./cub3d maps/good/library.cub
+==210029== 
+[31mERROR:
+[0mRGB should be [0;255]
+F 139,99,58
+C 171,154,137
+NO textures/simonkraft/bookshelf.xpm
+SO textures/simonkraft/bookshelf_01.xpm
+WE textures/simonkraft/bookshelf_02.xpm
+EA textures/simonkraft/bookshelf_03.xpm
+------------------------------
+1111111111111111111
+1001001001001001001
+1001001001001001001
+1001001001001001001
+1001001000001001001
+100000000S000000001
+1000011111111000001
+1111000000000001111
+1000000101010000001
+1111111111111111111
+==210029== 
+==210029== HEAP SUMMARY:
+==210029==     in use at exit: 0 bytes in 0 blocks
+==210029==   total heap usage: 126 allocs, 126 frees, 10,750 bytes allocated
+==210029== 
+==210029== All heap blocks were freed -- no leaks are possible
+==210029== 
+==210029== For lists of detected and suppressed errors, rerun with: -s
+==210029== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/matrix.cub[0m
+==210030== Memcheck, a memory error detector
+==210030== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210030== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210030== Command: ./cub3d maps/good/matrix.cub
+==210030== 
+NO textures/matrix.xpm
+SO textures/matrix.xpm
+WE textures/matrix.xpm
+EA textures/matrix.xpm
+F 0,0,0
+C 0,0,0
+------------------------------
+111111111111111111111
+101000001000000000001
+101010101011111110001
+100010100010000010001
+111110101111101011101
+100000101000101000001
+101111101011101111111
+101000001010100000101
+101011111010111110101
+101010001010100010101
+101110101010101010101
+100000101010001010001
+111111101011111011101
+100000101000100010001
+101110101110101110111
+101000100000100010101
+101011111111111010101
+100010000000000010001
+101010111011111111101
+1N1000001000000000001
+111111111111111111111
+[32mParsing ok ![0m==210030== 
+==210030== HEAP SUMMARY:
+==210030==     in use at exit: 0 bytes in 0 blocks
+==210030==   total heap usage: 199 allocs, 199 frees, 16,323 bytes allocated
+==210030== 
+==210030== All heap blocks were freed -- no leaks are possible
+==210030== 
+==210030== For lists of detected and suppressed errors, rerun with: -s
+==210030== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/sad_face.cub[0m
+==210031== Memcheck, a memory error detector
+==210031== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210031== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210031== Command: ./cub3d maps/good/sad_face.cub
+==210031== 
+NO textures/simonkraft/soul_sand.xpm
+SO textures/simonkraft/soul_soil_01.xpm
+WE textures/simonkraft/soul_soil.xpm
+EA textures/simonkraft/soul_sand.xpm
+C 53,41,34
+F 45,33,27
+------------------------------
+111111111111111
+111111000111111
+111110000011111
+1111000N0001111
+111000000000111
+110000000000011
+100001111100001
+110000111000011
+111000010000111
+111100000001111
+111110000011111
+111111000111111
+111111111111111
+[32mParsing ok ![0m==210031== 
+==210031== HEAP SUMMARY:
+==210031==     in use at exit: 0 bytes in 0 blocks
+==210031==   total heap usage: 151 allocs, 151 frees, 11,919 bytes allocated
+==210031== 
+==210031== All heap blocks were freed -- no leaks are possible
+==210031== 
+==210031== For lists of detected and suppressed errors, rerun with: -s
+==210031== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/square_map.cub[0m
+==210034== Memcheck, a memory error detector
+==210034== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210034== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210034== Command: ./cub3d maps/good/square_map.cub
+==210034== 
+[31mERROR:
+[0mRGB should be [0;255]
+   WE                            textures/wolfenstein/eagle.xpm 
+NO      textures/wolfenstein/grey_stone.xpm
+SO textures/wolfenstein/red_brick.xpm
+F   69, 222, 199
+EA textures/wolfenstein/mossy.xpm
+C 235, 198, 52
+------------------------------
+111111111111111111111111
+100000000000000000000001
+100000000000000000000001
+100000000N00000000000001
+100000000000000000000001
+100000000000000000000001
+100000000000000000000001
+100000111110000101010001
+100000100010000000000001
+100000100010000100010001
+100000100010000000000001
+100000111100001010100001
+100000000000000000000001
+100000000000000000000001
+100000000000000000000001
+100000000000000000000001
+100000000000000000000001
+100000000000000000000001
+100000000000000000000001
+111111111000000000000001
+100100001000000000000001
+100000101000000000000001
+100100001000000000000001
+100111111000000000000001
+100000000000000000000001
+100000000000000000000001
+111111111111111111111111
+==210034== 
+==210034== HEAP SUMMARY:
+==210034==     in use at exit: 0 bytes in 0 blocks
+==210034==   total heap usage: 246 allocs, 246 frees, 27,088 bytes allocated
+==210034== 
+==210034== All heap blocks were freed -- no leaks are possible
+==210034== 
+==210034== For lists of detected and suppressed errors, rerun with: -s
+==210034== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/subject_map.cub[0m
+==210035== Memcheck, a memory error detector
+==210035== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210035== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210035== Command: ./cub3d maps/good/subject_map.cub
+==210035== 
+NO textures/wolfenstein/grey_stone.xpm
+SO textures/wolfenstein/purple_stone.xpm
+WE textures/wolfenstein/red_brick.xpm
+EA textures/wolfenstein/wood.xpm
+F 220,100,0
+C 225,30,0
+------------------------------
+        1111111111111111111111111
+        1000000000110000000000001
+        1011000001110000000000001
+        1001000000000000000000001
+111111111011000001110000000000001
+100000000011000001110111111111111
+11110111111111011100000010001
+11110111111111011101010010001
+11000000110101011100000010001
+10000000000000001100000010001
+10000000000000001101010010001
+11000001110101011111011110N0111
+11110111 1110101 101111010001
+11111111 1111111 111111111111
+[32mParsing ok ![0m==210035== 
+==210035== HEAP SUMMARY:
+==210035==     in use at exit: 0 bytes in 0 blocks
+==210035==   total heap usage: 159 allocs, 159 frees, 14,701 bytes allocated
+==210035== 
+==210035== All heap blocks were freed -- no leaks are possible
+==210035== 
+==210035== For lists of detected and suppressed errors, rerun with: -s
+==210035== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/test_map.cub[0m
+==210036== Memcheck, a memory error detector
+==210036== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210036== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210036== Command: ./cub3d maps/good/test_map.cub
+==210036== 
+NO textures/wolfenstein/grey_stone.xpm
+SO textures/wolfenstein/purple_stone.xpm
+WE textures/wolfenstein/red_brick.xpm
+EA textures/wolfenstein/wood.xpm
+F 18,53,25
+C 153,204,255
+------------------------------
+111111111111
+1         11
+1          1
+111111111111
+10S000000001
+111111111111
+11         1
+111111111111
+[32mParsing ok ![0m==210036== 
+==210036== HEAP SUMMARY:
+==210036==     in use at exit: 0 bytes in 0 blocks
+==210036==   total heap usage: 122 allocs, 122 frees, 9,142 bytes allocated
+==210036== 
+==210036== All heap blocks were freed -- no leaks are possible
+==210036== 
+==210036== For lists of detected and suppressed errors, rerun with: -s
+==210036== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/test_pos_bottom.cub[0m
+==210037== Memcheck, a memory error detector
+==210037== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210037== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210037== Command: ./cub3d maps/good/test_pos_bottom.cub
+==210037== 
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+111
+101
+101
+101
+101
+101
+101
+101
+101
+101
+101
+1S1
+111
+[32mParsing ok ![0m==210037== 
+==210037== HEAP SUMMARY:
+==210037==     in use at exit: 0 bytes in 0 blocks
+==210037==   total heap usage: 149 allocs, 149 frees, 8,780 bytes allocated
+==210037== 
+==210037== All heap blocks were freed -- no leaks are possible
+==210037== 
+==210037== For lists of detected and suppressed errors, rerun with: -s
+==210037== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/test_pos_left.cub[0m
+==210038== Memcheck, a memory error detector
+==210038== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210038== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210038== Command: ./cub3d maps/good/test_pos_left.cub
+==210038== 
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+111111111111111111111
+1W0000000000000000001
+111111111111111111111
+[32mParsing ok ![0m==210038== 
+==210038== HEAP SUMMARY:
+==210038==     in use at exit: 0 bytes in 0 blocks
+==210038==   total heap usage: 89 allocs, 89 frees, 6,934 bytes allocated
+==210038== 
+==210038== All heap blocks were freed -- no leaks are possible
+==210038== 
+==210038== For lists of detected and suppressed errors, rerun with: -s
+==210038== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/test_pos_right.cub[0m
+==210039== Memcheck, a memory error detector
+==210039== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210039== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210039== Command: ./cub3d maps/good/test_pos_right.cub
+==210039== 
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+111111111111111111111
+1000000000000000000E1
+111111111111111111111
+[32mParsing ok ![0m==210039== 
+==210039== HEAP SUMMARY:
+==210039==     in use at exit: 0 bytes in 0 blocks
+==210039==   total heap usage: 89 allocs, 89 frees, 6,934 bytes allocated
+==210039== 
+==210039== All heap blocks were freed -- no leaks are possible
+==210039== 
+==210039== For lists of detected and suppressed errors, rerun with: -s
+==210039== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/test_pos_top.cub[0m
+==210040== Memcheck, a memory error detector
+==210040== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210040== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210040== Command: ./cub3d maps/good/test_pos_top.cub
+==210040== 
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+111
+1N1
+101
+101
+101
+101
+101
+101
+101
+101
+101
+101
+111
+[32mParsing ok ![0m==210040== 
+==210040== HEAP SUMMARY:
+==210040==     in use at exit: 0 bytes in 0 blocks
+==210040==   total heap usage: 149 allocs, 149 frees, 8,780 bytes allocated
+==210040== 
+==210040== All heap blocks were freed -- no leaks are possible
+==210040== 
+==210040== For lists of detected and suppressed errors, rerun with: -s
+==210040== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/test_textures.cub[0m
+==210041== Memcheck, a memory error detector
+==210041== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210041== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210041== Command: ./cub3d maps/good/test_textures.cub
+==210041== 
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+[32mParsing ok ![0m==210041== 
+==210041== HEAP SUMMARY:
+==210041==     in use at exit: 0 bytes in 0 blocks
+==210041==   total heap usage: 149 allocs, 149 frees, 9,066 bytes allocated
+==210041== 
+==210041== All heap blocks were freed -- no leaks are possible
+==210041== 
+==210041== For lists of detected and suppressed errors, rerun with: -s
+==210041== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/test_whitespace.cub[0m
+==210042== Memcheck, a memory error detector
+==210042== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210042== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210042== Command: ./cub3d maps/good/test_whitespace.cub
+==210042== 
+==210042== Invalid read of size 1
+==210042==    at 0x402AB6: ft_strlen (ft_strlen.c:20)
+==210042==    by 0x4025B7: find_start_map (map_parsing.c:90)
+==210042==    by 0x4028EE: get_map (map_parsing.c:157)
+==210042==    by 0x401D7C: check_file (check_map_file.c:104)
+==210042==    by 0x401369: main (main.c:53)
+==210042==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==210042== 
+==210042== 
+==210042== Process terminating with default action of signal 11 (SIGSEGV)
+==210042==  Access not within mapped region at address 0x0
+==210042==    at 0x402AB6: ft_strlen (ft_strlen.c:20)
+==210042==    by 0x4025B7: find_start_map (map_parsing.c:90)
+==210042==    by 0x4028EE: get_map (map_parsing.c:157)
+==210042==    by 0x401D7C: check_file (check_map_file.c:104)
+==210042==    by 0x401369: main (main.c:53)
+==210042==  If you believe this happened as a result of a stack
+==210042==  overflow in your program's main thread (unlikely but
+==210042==  possible), you can try to increase the size of the
+==210042==  main thread stack using the --main-stacksize= flag.
+==210042==  The main thread stack size used in this run was 8388608.
+==210042== 
+==210042== HEAP SUMMARY:
+==210042==     in use at exit: 909 bytes in 23 blocks
+==210042==   total heap usage: 142 allocs, 119 frees, 15,127 bytes allocated
+==210042== 
+==210042== LEAK SUMMARY:
+==210042==    definitely lost: 0 bytes in 0 blocks
+==210042==    indirectly lost: 0 bytes in 0 blocks
+==210042==      possibly lost: 0 bytes in 0 blocks
+==210042==    still reachable: 909 bytes in 23 blocks
+==210042==         suppressed: 0 bytes in 0 blocks
+==210042== Reachable blocks (those to which a pointer was found) are not shown.
+==210042== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==210042== 
+==210042== For lists of detected and suppressed errors, rerun with: -s
+==210042== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/works.cub[0m
+==210050== Memcheck, a memory error detector
+==210050== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210050== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210050== Command: ./cub3d maps/good/works.cub
+==210050== 
+[31mERROR:
+[0mRGB should be [0;255]
+   WE                            textures/wolfenstein/grey_stone.xpm
+NO      textures/wolfenstein/purple_stone.xpm
+SO textures/wolfenstein/red_brick.xpm
+F      17,    38,     64
+EA textures/wolfenstein/wood.xpm
+C 218, 234, 235
+------------------------------
+1111111111111111111111111
+10S0110000100000000000001
+1000110000000000111111001
+1000110000000000110001001
+1000000000100000000001001
+1111111111111111111111111
+==210050== 
+==210050== HEAP SUMMARY:
+==210050==     in use at exit: 0 bytes in 0 blocks
+==210050==   total heap usage: 120 allocs, 120 frees, 11,017 bytes allocated
+==210050== 
+==210050== All heap blocks were freed -- no leaks are possible
+==210050== 
+==210050== For lists of detected and suppressed errors, rerun with: -s
+==210050== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;34mMAP: maps/default.cub[0m
+==210051== Memcheck, a memory error detector
+==210051== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210051== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210051== Command: ./cub3d maps/default.cub
+==210051== 
+[31mERROR:
+[0mthere's something missing
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+==210051== 
+==210051== HEAP SUMMARY:
+==210051==     in use at exit: 0 bytes in 0 blocks
+==210051==   total heap usage: 84 allocs, 84 frees, 5,538 bytes allocated
+==210051== 
+==210051== All heap blocks were freed -- no leaks are possible
+==210051== 
+==210051== For lists of detected and suppressed errors, rerun with: -s
+==210051== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/cheese_maze.cub[0m
+==210052== Memcheck, a memory error detector
+==210052== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210052== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210052== Command: ./cub3d maps/good/cheese_maze.cub
+==210052== 
+NO textures/simonkraft/wet_sponge.xpm
+SO textures/simonkraft/wet_sponge.xpm
+WE textures/simonkraft/wet_sponge.xpm
+EA textures/simonkraft/wet_sponge.xpm
+F 164,169,20
+C 153,204,255
+------------------------------
+111111111111111111111
+101000001000000000001
+101010101011111110001
+100010100010000010001
+111110101111101011101
+100000101000101000001
+101111101011101111111
+101000001010100000101
+101011111010111110101
+101010001010100010101
+101110101010101010101
+100000101010001010001
+111111101011111011101
+100000101000100010001
+101110101110101110111
+101000100000100010101
+101011111111111010101
+100010000000000010001
+101010111011111111101
+1N1000001000000000001
+111111111111111111111
+[32mParsing ok ![0m==210052== 
+==210052== HEAP SUMMARY:
+==210052==     in use at exit: 0 bytes in 0 blocks
+==210052==   total heap usage: 199 allocs, 199 frees, 18,674 bytes allocated
+==210052== 
+==210052== All heap blocks were freed -- no leaks are possible
+==210052== 
+==210052== For lists of detected and suppressed errors, rerun with: -s
+==210052== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/creepy.cub[0m
+==210053== Memcheck, a memory error detector
+==210053== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210053== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210053== Command: ./cub3d maps/good/creepy.cub
+==210053== 
+NO textures/simonkraft/respawn_anchor_side0.xpm
+EA textures/simonkraft/respawn_anchor_side2.xpm
+SO textures/simonkraft/respawn_anchor_side4.xpm
+WE textures/simonkraft/respawn_anchor_side3.xpm
+C 35,19,73
+F 15,6,40
+------------------------------
+111111111111111
+111111000111111
+111110000011111
+1111000N0001111
+111000000000111
+110000000000011
+100001111100001
+110000111000011
+111000010000111
+111100000001111
+111110000011111
+111111000111111
+111111111111111
+[32mParsing ok ![0m==210053== 
+==210053== HEAP SUMMARY:
+==210053==     in use at exit: 0 bytes in 0 blocks
+==210053==   total heap usage: 151 allocs, 151 frees, 12,940 bytes allocated
+==210053== 
+==210053== All heap blocks were freed -- no leaks are possible
+==210053== 
+==210053== For lists of detected and suppressed errors, rerun with: -s
+==210053== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/dungeon.cub[0m
+==210054== Memcheck, a memory error detector
+==210054== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210054== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210054== Command: ./cub3d maps/good/dungeon.cub
+==210054== 
+[31mERROR:
+[0mRGB should be [0;255]
+F 76,76,76
+C 99,99,99
+NO textures/simonkraft/cobblestone.xpm
+SO textures/simonkraft/cobblestone_01.xpm
+WE textures/simonkraft/mossy_cobblestone1.xpm
+EA textures/simonkraft/cobblestone_02.xpm
+------------------------------
+1111111111111111111
+10W1001001001000001
+1011000001000001001
+1001001001111101111
+1001111000001001001
+1000000000000001001
+1001111111111001001
+1111000000000001011
+1000000001000000001
+1111111111111111111
+==210054== 
+==210054== HEAP SUMMARY:
+==210054==     in use at exit: 0 bytes in 0 blocks
+==210054==   total heap usage: 126 allocs, 126 frees, 10,897 bytes allocated
+==210054== 
+==210054== All heap blocks were freed -- no leaks are possible
+==210054== 
+==210054== For lists of detected and suppressed errors, rerun with: -s
+==210054== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/library.cub[0m
+==210055== Memcheck, a memory error detector
+==210055== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210055== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210055== Command: ./cub3d maps/good/library.cub
+==210055== 
+[31mERROR:
+[0mRGB should be [0;255]
+F 139,99,58
+C 171,154,137
+NO textures/simonkraft/bookshelf.xpm
+SO textures/simonkraft/bookshelf_01.xpm
+WE textures/simonkraft/bookshelf_02.xpm
+EA textures/simonkraft/bookshelf_03.xpm
+------------------------------
+1111111111111111111
+1001001001001001001
+1001001001001001001
+1001001001001001001
+1001001000001001001
+100000000S000000001
+1000011111111000001
+1111000000000001111
+1000000101010000001
+1111111111111111111
+==210055== 
+==210055== HEAP SUMMARY:
+==210055==     in use at exit: 0 bytes in 0 blocks
+==210055==   total heap usage: 126 allocs, 126 frees, 10,750 bytes allocated
+==210055== 
+==210055== All heap blocks were freed -- no leaks are possible
+==210055== 
+==210055== For lists of detected and suppressed errors, rerun with: -s
+==210055== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/matrix.cub[0m
+==210056== Memcheck, a memory error detector
+==210056== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210056== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210056== Command: ./cub3d maps/good/matrix.cub
+==210056== 
+NO textures/matrix.xpm
+SO textures/matrix.xpm
+WE textures/matrix.xpm
+EA textures/matrix.xpm
+F 0,0,0
+C 0,0,0
+------------------------------
+111111111111111111111
+101000001000000000001
+101010101011111110001
+100010100010000010001
+111110101111101011101
+100000101000101000001
+101111101011101111111
+101000001010100000101
+101011111010111110101
+101010001010100010101
+101110101010101010101
+100000101010001010001
+111111101011111011101
+100000101000100010001
+101110101110101110111
+101000100000100010101
+101011111111111010101
+100010000000000010001
+101010111011111111101
+1N1000001000000000001
+111111111111111111111
+[32mParsing ok ![0m==210056== 
+==210056== HEAP SUMMARY:
+==210056==     in use at exit: 0 bytes in 0 blocks
+==210056==   total heap usage: 199 allocs, 199 frees, 16,323 bytes allocated
+==210056== 
+==210056== All heap blocks were freed -- no leaks are possible
+==210056== 
+==210056== For lists of detected and suppressed errors, rerun with: -s
+==210056== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/sad_face.cub[0m
+==210057== Memcheck, a memory error detector
+==210057== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210057== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210057== Command: ./cub3d maps/good/sad_face.cub
+==210057== 
+NO textures/simonkraft/soul_sand.xpm
+SO textures/simonkraft/soul_soil_01.xpm
+WE textures/simonkraft/soul_soil.xpm
+EA textures/simonkraft/soul_sand.xpm
+C 53,41,34
+F 45,33,27
+------------------------------
+111111111111111
+111111000111111
+111110000011111
+1111000N0001111
+111000000000111
+110000000000011
+100001111100001
+110000111000011
+111000010000111
+111100000001111
+111110000011111
+111111000111111
+111111111111111
+[32mParsing ok ![0m==210057== 
+==210057== HEAP SUMMARY:
+==210057==     in use at exit: 0 bytes in 0 blocks
+==210057==   total heap usage: 151 allocs, 151 frees, 11,919 bytes allocated
+==210057== 
+==210057== All heap blocks were freed -- no leaks are possible
+==210057== 
+==210057== For lists of detected and suppressed errors, rerun with: -s
+==210057== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/square_map.cub[0m
+==210058== Memcheck, a memory error detector
+==210058== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210058== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210058== Command: ./cub3d maps/good/square_map.cub
+==210058== 
+[31mERROR:
+[0mRGB should be [0;255]
+   WE                            textures/wolfenstein/eagle.xpm 
+NO      textures/wolfenstein/grey_stone.xpm
+SO textures/wolfenstein/red_brick.xpm
+F   69, 222, 199
+EA textures/wolfenstein/mossy.xpm
+C 235, 198, 52
+------------------------------
+111111111111111111111111
+100000000000000000000001
+100000000000000000000001
+100000000N00000000000001
+100000000000000000000001
+100000000000000000000001
+100000000000000000000001
+100000111110000101010001
+100000100010000000000001
+100000100010000100010001
+100000100010000000000001
+100000111100001010100001
+100000000000000000000001
+100000000000000000000001
+100000000000000000000001
+100000000000000000000001
+100000000000000000000001
+100000000000000000000001
+100000000000000000000001
+111111111000000000000001
+100100001000000000000001
+100000101000000000000001
+100100001000000000000001
+100111111000000000000001
+100000000000000000000001
+100000000000000000000001
+111111111111111111111111
+==210058== 
+==210058== HEAP SUMMARY:
+==210058==     in use at exit: 0 bytes in 0 blocks
+==210058==   total heap usage: 246 allocs, 246 frees, 27,088 bytes allocated
+==210058== 
+==210058== All heap blocks were freed -- no leaks are possible
+==210058== 
+==210058== For lists of detected and suppressed errors, rerun with: -s
+==210058== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/subject_map.cub[0m
+==210059== Memcheck, a memory error detector
+==210059== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210059== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210059== Command: ./cub3d maps/good/subject_map.cub
+==210059== 
+NO textures/wolfenstein/grey_stone.xpm
+SO textures/wolfenstein/purple_stone.xpm
+WE textures/wolfenstein/red_brick.xpm
+EA textures/wolfenstein/wood.xpm
+F 220,100,0
+C 225,30,0
+------------------------------
+        1111111111111111111111111
+        1000000000110000000000001
+        1011000001110000000000001
+        1001000000000000000000001
+111111111011000001110000000000001
+100000000011000001110111111111111
+11110111111111011100000010001
+11110111111111011101010010001
+11000000110101011100000010001
+10000000000000001100000010001
+10000000000000001101010010001
+11000001110101011111011110N0111
+11110111 1110101 101111010001
+11111111 1111111 111111111111
+[32mParsing ok ![0m==210059== 
+==210059== HEAP SUMMARY:
+==210059==     in use at exit: 0 bytes in 0 blocks
+==210059==   total heap usage: 159 allocs, 159 frees, 14,701 bytes allocated
+==210059== 
+==210059== All heap blocks were freed -- no leaks are possible
+==210059== 
+==210059== For lists of detected and suppressed errors, rerun with: -s
+==210059== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/test_map.cub[0m
+==210060== Memcheck, a memory error detector
+==210060== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210060== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210060== Command: ./cub3d maps/good/test_map.cub
+==210060== 
+NO textures/wolfenstein/grey_stone.xpm
+SO textures/wolfenstein/purple_stone.xpm
+WE textures/wolfenstein/red_brick.xpm
+EA textures/wolfenstein/wood.xpm
+F 18,53,25
+C 153,204,255
+------------------------------
+111111111111
+1         11
+1          1
+111111111111
+10S000000001
+111111111111
+11         1
+111111111111
+[32mParsing ok ![0m==210060== 
+==210060== HEAP SUMMARY:
+==210060==     in use at exit: 0 bytes in 0 blocks
+==210060==   total heap usage: 122 allocs, 122 frees, 9,142 bytes allocated
+==210060== 
+==210060== All heap blocks were freed -- no leaks are possible
+==210060== 
+==210060== For lists of detected and suppressed errors, rerun with: -s
+==210060== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/test_pos_bottom.cub[0m
+==210061== Memcheck, a memory error detector
+==210061== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210061== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210061== Command: ./cub3d maps/good/test_pos_bottom.cub
+==210061== 
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+111
+101
+101
+101
+101
+101
+101
+101
+101
+101
+101
+1S1
+111
+[32mParsing ok ![0m==210061== 
+==210061== HEAP SUMMARY:
+==210061==     in use at exit: 0 bytes in 0 blocks
+==210061==   total heap usage: 149 allocs, 149 frees, 8,780 bytes allocated
+==210061== 
+==210061== All heap blocks were freed -- no leaks are possible
+==210061== 
+==210061== For lists of detected and suppressed errors, rerun with: -s
+==210061== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/test_pos_left.cub[0m
+==210062== Memcheck, a memory error detector
+==210062== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210062== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210062== Command: ./cub3d maps/good/test_pos_left.cub
+==210062== 
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+111111111111111111111
+1W0000000000000000001
+111111111111111111111
+[32mParsing ok ![0m==210062== 
+==210062== HEAP SUMMARY:
+==210062==     in use at exit: 0 bytes in 0 blocks
+==210062==   total heap usage: 89 allocs, 89 frees, 6,934 bytes allocated
+==210062== 
+==210062== All heap blocks were freed -- no leaks are possible
+==210062== 
+==210062== For lists of detected and suppressed errors, rerun with: -s
+==210062== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/test_pos_right.cub[0m
+==210063== Memcheck, a memory error detector
+==210063== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210063== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210063== Command: ./cub3d maps/good/test_pos_right.cub
+==210063== 
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+111111111111111111111
+1000000000000000000E1
+111111111111111111111
+[32mParsing ok ![0m==210063== 
+==210063== HEAP SUMMARY:
+==210063==     in use at exit: 0 bytes in 0 blocks
+==210063==   total heap usage: 89 allocs, 89 frees, 6,934 bytes allocated
+==210063== 
+==210063== All heap blocks were freed -- no leaks are possible
+==210063== 
+==210063== For lists of detected and suppressed errors, rerun with: -s
+==210063== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/test_pos_top.cub[0m
+==210064== Memcheck, a memory error detector
+==210064== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210064== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210064== Command: ./cub3d maps/good/test_pos_top.cub
+==210064== 
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+111
+1N1
+101
+101
+101
+101
+101
+101
+101
+101
+101
+101
+111
+[32mParsing ok ![0m==210064== 
+==210064== HEAP SUMMARY:
+==210064==     in use at exit: 0 bytes in 0 blocks
+==210064==   total heap usage: 149 allocs, 149 frees, 8,780 bytes allocated
+==210064== 
+==210064== All heap blocks were freed -- no leaks are possible
+==210064== 
+==210064== For lists of detected and suppressed errors, rerun with: -s
+==210064== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/test_textures.cub[0m
+==210065== Memcheck, a memory error detector
+==210065== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210065== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210065== Command: ./cub3d maps/good/test_textures.cub
+==210065== 
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+[32mParsing ok ![0m==210065== 
+==210065== HEAP SUMMARY:
+==210065==     in use at exit: 0 bytes in 0 blocks
+==210065==   total heap usage: 149 allocs, 149 frees, 9,066 bytes allocated
+==210065== 
+==210065== All heap blocks were freed -- no leaks are possible
+==210065== 
+==210065== For lists of detected and suppressed errors, rerun with: -s
+==210065== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/test_whitespace.cub[0m
+==210066== Memcheck, a memory error detector
+==210066== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210066== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210066== Command: ./cub3d maps/good/test_whitespace.cub
+==210066== 
+==210066== Invalid read of size 1
+==210066==    at 0x402AB6: ft_strlen (ft_strlen.c:20)
+==210066==    by 0x4025B7: find_start_map (map_parsing.c:90)
+==210066==    by 0x4028EE: get_map (map_parsing.c:157)
+==210066==    by 0x401D7C: check_file (check_map_file.c:104)
+==210066==    by 0x401369: main (main.c:53)
+==210066==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==210066== 
+==210066== 
+==210066== Process terminating with default action of signal 11 (SIGSEGV)
+==210066==  Access not within mapped region at address 0x0
+==210066==    at 0x402AB6: ft_strlen (ft_strlen.c:20)
+==210066==    by 0x4025B7: find_start_map (map_parsing.c:90)
+==210066==    by 0x4028EE: get_map (map_parsing.c:157)
+==210066==    by 0x401D7C: check_file (check_map_file.c:104)
+==210066==    by 0x401369: main (main.c:53)
+==210066==  If you believe this happened as a result of a stack
+==210066==  overflow in your program's main thread (unlikely but
+==210066==  possible), you can try to increase the size of the
+==210066==  main thread stack using the --main-stacksize= flag.
+==210066==  The main thread stack size used in this run was 8388608.
+==210066== 
+==210066== HEAP SUMMARY:
+==210066==     in use at exit: 909 bytes in 23 blocks
+==210066==   total heap usage: 142 allocs, 119 frees, 15,127 bytes allocated
+==210066== 
+==210066== LEAK SUMMARY:
+==210066==    definitely lost: 0 bytes in 0 blocks
+==210066==    indirectly lost: 0 bytes in 0 blocks
+==210066==      possibly lost: 0 bytes in 0 blocks
+==210066==    still reachable: 909 bytes in 23 blocks
+==210066==         suppressed: 0 bytes in 0 blocks
+==210066== Reachable blocks (those to which a pointer was found) are not shown.
+==210066== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==210066== 
+==210066== For lists of detected and suppressed errors, rerun with: -s
+==210066== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+
+
+[0;32mGOOD MAP: maps/good/works.cub[0m
+==210072== Memcheck, a memory error detector
+==210072== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210072== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210072== Command: ./cub3d maps/good/works.cub
+==210072== 
+[31mERROR:
+[0mRGB should be [0;255]
+   WE                            textures/wolfenstein/grey_stone.xpm
+NO      textures/wolfenstein/purple_stone.xpm
+SO textures/wolfenstein/red_brick.xpm
+F      17,    38,     64
+EA textures/wolfenstein/wood.xpm
+C 218, 234, 235
+------------------------------
+1111111111111111111111111
+10S0110000100000000000001
+1000110000000000111111001
+1000110000000000110001001
+1000000000100000000001001
+1111111111111111111111111
+==210072== 
+==210072== HEAP SUMMARY:
+==210072==     in use at exit: 0 bytes in 0 blocks
+==210072==   total heap usage: 120 allocs, 120 frees, 11,017 bytes allocated
+==210072== 
+==210072== All heap blocks were freed -- no leaks are possible
+==210072== 
+==210072== For lists of detected and suppressed errors, rerun with: -s
+==210072== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/color_invalid_rgb.cub[0m
+==210073== Memcheck, a memory error detector
+==210073== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210073== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210073== Command: ./cub3d maps/bad/color_invalid_rgb.cub
+==210073== 
+[31mERROR:
+[0mRGB should be [0;255]
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,-20
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+==210073== 
+==210073== HEAP SUMMARY:
+==210073==     in use at exit: 0 bytes in 0 blocks
+==210073==   total heap usage: 144 allocs, 144 frees, 9,034 bytes allocated
+==210073== 
+==210073== All heap blocks were freed -- no leaks are possible
+==210073== 
+==210073== For lists of detected and suppressed errors, rerun with: -s
+==210073== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/color_missing.cub[0m
+==210074== Memcheck, a memory error detector
+==210074== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210074== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210074== Command: ./cub3d maps/bad/color_missing.cub
+==210074== 
+[31mERROR:
+[0mthere's something missing
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+==210074== 
+==210074== HEAP SUMMARY:
+==210074==     in use at exit: 0 bytes in 0 blocks
+==210074==   total heap usage: 131 allocs, 131 frees, 8,583 bytes allocated
+==210074== 
+==210074== All heap blocks were freed -- no leaks are possible
+==210074== 
+==210074== For lists of detected and suppressed errors, rerun with: -s
+==210074== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/color_missing_ceiling_rgb.cub[0m
+==210075== Memcheck, a memory error detector
+==210075== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210075== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210075== Command: ./cub3d maps/bad/color_missing_ceiling_rgb.cub
+==210075== 
+[31mERROR:
+[0mRGB values are only 3 int
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+==210075== 
+==210075== HEAP SUMMARY:
+==210075==     in use at exit: 0 bytes in 0 blocks
+==210075==   total heap usage: 148 allocs, 148 frees, 8,991 bytes allocated
+==210075== 
+==210075== All heap blocks were freed -- no leaks are possible
+==210075== 
+==210075== For lists of detected and suppressed errors, rerun with: -s
+==210075== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/color_missing_floor_rgb.cub[0m
+==210076== Memcheck, a memory error detector
+==210076== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210076== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210076== Command: ./cub3d maps/bad/color_missing_floor_rgb.cub
+==210076== 
+[31mERROR:
+[0mRGB values are only 3 int
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+==210076== 
+==210076== HEAP SUMMARY:
+==210076==     in use at exit: 0 bytes in 0 blocks
+==210076==   total heap usage: 143 allocs, 143 frees, 8,938 bytes allocated
+==210076== 
+==210076== All heap blocks were freed -- no leaks are possible
+==210076== 
+==210076== For lists of detected and suppressed errors, rerun with: -s
+==210076== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/color_none.cub[0m
+==210077== Memcheck, a memory error detector
+==210077== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210077== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210077== Command: ./cub3d maps/bad/color_none.cub
+==210077== 
+[31mERROR:
+[0mthere's something missing
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+==210077== 
+==210077== HEAP SUMMARY:
+==210077==     in use at exit: 0 bytes in 0 blocks
+==210077==   total heap usage: 121 allocs, 121 frees, 8,044 bytes allocated
+==210077== 
+==210077== All heap blocks were freed -- no leaks are possible
+==210077== 
+==210077== For lists of detected and suppressed errors, rerun with: -s
+==210077== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/empty.cub[0m
+==210078== Memcheck, a memory error detector
+==210078== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210078== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210078== Command: ./cub3d maps/bad/empty.cub
+==210078== 
+[31mERROR:
+[0mFailed to get the file
+==210078== 
+==210078== HEAP SUMMARY:
+==210078==     in use at exit: 0 bytes in 0 blocks
+==210078==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==210078== 
+==210078== All heap blocks were freed -- no leaks are possible
+==210078== 
+==210078== For lists of detected and suppressed errors, rerun with: -s
+==210078== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/file_letter_end.cub[0m
+==210079== Memcheck, a memory error detector
+==210079== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210079== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210079== Command: ./cub3d maps/bad/file_letter_end.cub
+==210079== 
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+1
+[32mParsing ok ![0m==210079== 
+==210079== HEAP SUMMARY:
+==210079==     in use at exit: 0 bytes in 0 blocks
+==210079==   total heap usage: 181 allocs, 181 frees, 12,205 bytes allocated
+==210079== 
+==210079== All heap blocks were freed -- no leaks are possible
+==210079== 
+==210079== For lists of detected and suppressed errors, rerun with: -s
+==210079== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/map_first.cub[0m
+==210080== Memcheck, a memory error detector
+==210080== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210080== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210080== Command: ./cub3d maps/bad/map_first.cub
+==210080== 
+[31mERROR:
+[0mNo player detected
+
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+==210080== 
+==210080== HEAP SUMMARY:
+==210080==     in use at exit: 0 bytes in 0 blocks
+==210080==   total heap usage: 87 allocs, 87 frees, 6,941 bytes allocated
+==210080== 
+==210080== All heap blocks were freed -- no leaks are possible
+==210080== 
+==210080== For lists of detected and suppressed errors, rerun with: -s
+==210080== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/map_middle.cub[0m
+==210081== Memcheck, a memory error detector
+==210081== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210081== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210081== Command: ./cub3d maps/bad/map_middle.cub
+==210081== 
+[31mERROR:
+[0mNo player detected
+
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+F 20,20,20
+C 200,200,200
+------------------------------
+==210081== 
+==210081== HEAP SUMMARY:
+==210081==     in use at exit: 0 bytes in 0 blocks
+==210081==   total heap usage: 91 allocs, 91 frees, 8,477 bytes allocated
+==210081== 
+==210081== All heap blocks were freed -- no leaks are possible
+==210081== 
+==210081== For lists of detected and suppressed errors, rerun with: -s
+==210081== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/map_missing.cub[0m
+==210082== Memcheck, a memory error detector
+==210082== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210082== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210082== Command: ./cub3d maps/bad/map_missing.cub
+==210082== 
+[31mERROR:
+[0mNo player detected
+
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+==210082== 
+==210082== HEAP SUMMARY:
+==210082==     in use at exit: 0 bytes in 0 blocks
+==210082==   total heap usage: 35 allocs, 35 frees, 5,430 bytes allocated
+==210082== 
+==210082== All heap blocks were freed -- no leaks are possible
+==210082== 
+==210082== For lists of detected and suppressed errors, rerun with: -s
+==210082== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/map_only.cub[0m
+==210083== Memcheck, a memory error detector
+==210083== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210083== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210083== Command: ./cub3d maps/bad/map_only.cub
+==210083== 
+[31mERROR:
+[0mthere's something missing
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+==210083== 
+==210083== HEAP SUMMARY:
+==210083==     in use at exit: 0 bytes in 0 blocks
+==210083==   total heap usage: 84 allocs, 84 frees, 5,540 bytes allocated
+==210083== 
+==210083== All heap blocks were freed -- no leaks are possible
+==210083== 
+==210083== For lists of detected and suppressed errors, rerun with: -s
+==210083== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/map_too_small.cub[0m
+==210084== Memcheck, a memory error detector
+==210084== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210084== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210084== Command: ./cub3d maps/bad/map_too_small.cub
+==210084== 
+[31mERROR:
+[0mNo player detected
+
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+111
+111
+==210084== 
+==210084== HEAP SUMMARY:
+==210084==     in use at exit: 0 bytes in 0 blocks
+==210084==   total heap usage: 47 allocs, 47 frees, 5,808 bytes allocated
+==210084== 
+==210084== All heap blocks were freed -- no leaks are possible
+==210084== 
+==210084== For lists of detected and suppressed errors, rerun with: -s
+==210084== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/player_multiple.cub[0m
+==210085== Memcheck, a memory error detector
+==210085== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210085== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210085== Command: ./cub3d maps/bad/player_multiple.cub
+==210085== 
+[31mERROR:
+[0mToo many players
+
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11E01
+10001
+10001
+10001
+10001
+10001
+11111
+==210085== 
+==210085== HEAP SUMMARY:
+==210085==     in use at exit: 0 bytes in 0 blocks
+==210085==   total heap usage: 113 allocs, 113 frees, 8,459 bytes allocated
+==210085== 
+==210085== All heap blocks were freed -- no leaks are possible
+==210085== 
+==210085== For lists of detected and suppressed errors, rerun with: -s
+==210085== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/player_none.cub[0m
+==210086== Memcheck, a memory error detector
+==210086== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210086== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210086== Command: ./cub3d maps/bad/player_none.cub
+==210086== 
+[31mERROR:
+[0mNo player detected
+
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+11111
+10001
+10001
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+==210086== 
+==210086== HEAP SUMMARY:
+==210086==     in use at exit: 0 bytes in 0 blocks
+==210086==   total heap usage: 113 allocs, 113 frees, 8,459 bytes allocated
+==210086== 
+==210086== All heap blocks were freed -- no leaks are possible
+==210086== 
+==210086== For lists of detected and suppressed errors, rerun with: -s
+==210086== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/player_on_edge.cub[0m
+==210087== Memcheck, a memory error detector
+==210087== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210087== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210087== Command: ./cub3d maps/bad/player_on_edge.cub
+==210087== 
+[31mERROR:
+[0mThe borders of the map are not valid
+
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+1S111
+10001
+10001
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+==210087== 
+==210087== HEAP SUMMARY:
+==210087==     in use at exit: 0 bytes in 0 blocks
+==210087==   total heap usage: 113 allocs, 113 frees, 8,459 bytes allocated
+==210087== 
+==210087== All heap blocks were freed -- no leaks are possible
+==210087== 
+==210087== For lists of detected and suppressed errors, rerun with: -s
+==210087== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/textures_dir.cub[0m
+==210088== Memcheck, a memory error detector
+==210088== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210088== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210088== Command: ./cub3d maps/bad/textures_dir.cub
+==210088== 
+[31mERROR:
+[0mNO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/
+F 20,20,20
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+file type isn't .xpm
+==210088== 
+==210088== HEAP SUMMARY:
+==210088==     in use at exit: 0 bytes in 0 blocks
+==210088==   total heap usage: 149 allocs, 149 frees, 8,882 bytes allocated
+==210088== 
+==210088== All heap blocks were freed -- no leaks are possible
+==210088== 
+==210088== For lists of detected and suppressed errors, rerun with: -s
+==210088== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/textures_duplicates.cub[0m
+==210089== Memcheck, a memory error detector
+==210089== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210089== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210089== Command: ./cub3d maps/bad/textures_duplicates.cub
+==210089== 
+[31mERROR:
+[0mmultiple time a texture
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+==210089== 
+==210089== HEAP SUMMARY:
+==210089==     in use at exit: 0 bytes in 0 blocks
+==210089==   total heap usage: 138 allocs, 138 frees, 9,587 bytes allocated
+==210089== 
+==210089== All heap blocks were freed -- no leaks are possible
+==210089== 
+==210089== For lists of detected and suppressed errors, rerun with: -s
+==210089== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/textures_invalid.cub[0m
+==210090== Memcheck, a memory error detector
+==210090== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210090== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210090== Command: ./cub3d maps/bad/textures_invalid.cub
+==210090== 
+[31mERROR:
+[0mNO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/x
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+file type isn't .xpm
+==210090== 
+==210090== HEAP SUMMARY:
+==210090==     in use at exit: 0 bytes in 0 blocks
+==210090==   total heap usage: 149 allocs, 149 frees, 8,898 bytes allocated
+==210090== 
+==210090== All heap blocks were freed -- no leaks are possible
+==210090== 
+==210090== For lists of detected and suppressed errors, rerun with: -s
+==210090== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/textures_missing.cub[0m
+==210091== Memcheck, a memory error detector
+==210091== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210091== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210091== Command: ./cub3d maps/bad/textures_missing.cub
+==210091== 
+[31mERROR:
+[0mthere's something missing
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+==210091== 
+==210091== HEAP SUMMARY:
+==210091==     in use at exit: 0 bytes in 0 blocks
+==210091==   total heap usage: 131 allocs, 131 frees, 8,220 bytes allocated
+==210091== 
+==210091== All heap blocks were freed -- no leaks are possible
+==210091== 
+==210091== For lists of detected and suppressed errors, rerun with: -s
+==210091== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/textures_none.cub[0m
+==210092== Memcheck, a memory error detector
+==210092== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210092== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210092== Command: ./cub3d maps/bad/textures_none.cub
+==210092== 
+[31mERROR:
+[0mthere's something missing
+F 20,20,20
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+==210092== 
+==210092== HEAP SUMMARY:
+==210092==     in use at exit: 0 bytes in 0 blocks
+==210092==   total heap usage: 105 allocs, 105 frees, 6,186 bytes allocated
+==210092== 
+==210092== All heap blocks were freed -- no leaks are possible
+==210092== 
+==210092== For lists of detected and suppressed errors, rerun with: -s
+==210092== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/textures_not_xpm.cub[0m
+==210093== Memcheck, a memory error detector
+==210093== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210093== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210093== Command: ./cub3d maps/bad/textures_not_xpm.cub
+==210093== 
+[31mERROR:
+[0mNO textures/test/north
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+file type isn't .xpm
+==210093== 
+==210093== HEAP SUMMARY:
+==210093==     in use at exit: 0 bytes in 0 blocks
+==210093==   total heap usage: 149 allocs, 149 frees, 8,962 bytes allocated
+==210093== 
+==210093== All heap blocks were freed -- no leaks are possible
+==210093== 
+==210093== For lists of detected and suppressed errors, rerun with: -s
+==210093== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/wall_hole_east.cub[0m
+==210094== Memcheck, a memory error detector
+==210094== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210094== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210094== Command: ./cub3d maps/bad/wall_hole_east.cub
+==210094== 
+[31mERROR:
+[0mThe borders of the map are not valid
+
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11000
+10001
+10001
+10001
+10001
+10001
+11111
+==210094== 
+==210094== HEAP SUMMARY:
+==210094==     in use at exit: 0 bytes in 0 blocks
+==210094==   total heap usage: 113 allocs, 113 frees, 8,459 bytes allocated
+==210094== 
+==210094== All heap blocks were freed -- no leaks are possible
+==210094== 
+==210094== For lists of detected and suppressed errors, rerun with: -s
+==210094== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/wall_hole_north.cub[0m
+==210095== Memcheck, a memory error detector
+==210095== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210095== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210095== Command: ./cub3d maps/bad/wall_hole_north.cub
+==210095== 
+[31mERROR:
+[0mThe borders of the map are not valid
+
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+11011
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+==210095== 
+==210095== HEAP SUMMARY:
+==210095==     in use at exit: 0 bytes in 0 blocks
+==210095==   total heap usage: 113 allocs, 113 frees, 8,459 bytes allocated
+==210095== 
+==210095== All heap blocks were freed -- no leaks are possible
+==210095== 
+==210095== For lists of detected and suppressed errors, rerun with: -s
+==210095== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/wall_hole_south.cub[0m
+==210096== Memcheck, a memory error detector
+==210096== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210096== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210096== Command: ./cub3d maps/bad/wall_hole_south.cub
+==210096== 
+[31mERROR:
+[0mThe borders of the map are not valid
+
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+10001
+11001
+10001
+10001
+10001
+10001
+10001
+11011
+==210096== 
+==210096== HEAP SUMMARY:
+==210096==     in use at exit: 0 bytes in 0 blocks
+==210096==   total heap usage: 113 allocs, 113 frees, 8,459 bytes allocated
+==210096== 
+==210096== All heap blocks were freed -- no leaks are possible
+==210096== 
+==210096== For lists of detected and suppressed errors, rerun with: -s
+==210096== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/wall_hole_west.cub[0m
+==210097== Memcheck, a memory error detector
+==210097== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210097== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210097== Command: ./cub3d maps/bad/wall_hole_west.cub
+==210097== 
+[31mERROR:
+[0mThe borders of the map are not valid
+
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+11111
+10001
+10S01
+10001
+10001
+00001
+11001
+10001
+10001
+10001
+10001
+10001
+11111
+==210097== 
+==210097== HEAP SUMMARY:
+==210097==     in use at exit: 0 bytes in 0 blocks
+==210097==   total heap usage: 113 allocs, 113 frees, 8,459 bytes allocated
+==210097== 
+==210097== All heap blocks were freed -- no leaks are possible
+==210097== 
+==210097== For lists of detected and suppressed errors, rerun with: -s
+==210097== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+[0;31mBAD MAP: maps/bad/wall_none.cub[0m
+==210098== Memcheck, a memory error detector
+==210098== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==210098== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==210098== Command: ./cub3d maps/bad/wall_none.cub
+==210098== 
+[31mERROR:
+[0mThe borders of the map are not valid
+
+NO textures/test/north.xpm
+SO textures/test/south.xpm
+WE textures/test/west.xpm
+EA textures/test/east.xpm
+F 20,20,20
+C 200,200,200
+------------------------------
+00000
+00000
+00S00
+00000
+00000
+00000
+00000
+00000
+00000
+00000
+00000
+00000
+00000
+==210098== 
+==210098== HEAP SUMMARY:
+==210098==     in use at exit: 0 bytes in 0 blocks
+==210098==   total heap usage: 113 allocs, 113 frees, 8,459 bytes allocated
+==210098== 
+==210098== All heap blocks were freed -- no leaks are possible
+==210098== 
+==210098== For lists of detected and suppressed errors, rerun with: -s
+==210098== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+

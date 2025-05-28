@@ -8,8 +8,11 @@ int	check_rgb_values(char *rgb[2])
 	int		value;
 
 	i = -1;
+	if (!rgb[0] || !rgb[0][0] || !rgb[1] || !rgb[1][0])
+		return (p_er("rgb values not found"), 1);
 	while (++i < 2)
 	{
+		printf("rgb[%d] : %s\n", i, rgb[i]);
 		values = ft_split(rgb[i], " ,");
 		if (!values)
 			return (p_er("Failed split rgb values"), 1);
@@ -50,7 +53,7 @@ int	get_data(t_map *map, char **id, int i)
 			}
 		}
 		if (ft_cmpstr(line[0], id[j]) != 0)
-			return (p_er("there's something not required"), free_arr(line), 1);
+			return (p_er(""), printf("%s not found", id[j]), free_arr(line), 1);
 		free_arr(line);
 	}
 	return (0);
@@ -116,8 +119,8 @@ int	check_file(char *path, t_map *map)
 		count++;
 	if (count != 6)
 		return (p_er("there's something missing"), 1);
-	rgb[0] = map->data[4];
-	rgb[1] = map->data[5];
+	rgb[0] = get_txt("F", map);
+	rgb[1] = get_txt("C", map);
 	if (check_rgb_values(rgb) != 0 || check_txt(map) != 0)
 		return (1);
 	return (0);
