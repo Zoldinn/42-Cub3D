@@ -6,12 +6,13 @@ int	check_extension(char *file_name, char *ext)
 
 	len = ft_strlen(file_name);
 	if (len <= 4)
-		return (p_er(""), printf("map extension isn't %s\n", ext), 1);
+		return (p_er(""), printf("file type isn't %s\n", ext), 1);
 	else if (file_name[len - 4] != ext[0]
 		|| file_name[len - 3] != ext[1]
 		|| file_name[len - 2] != ext[2]
-		|| file_name[len - 1] != ext[3])
-		return (p_er(""), printf("map extension isn't %s\n", ext), 1);
+		|| file_name[len - 1] != ext[3]
+		|| file_name[len] != '\0')
+		return (p_er(""), printf("file type isn't %s\n", ext), 1);
 	return (0);
 }
 

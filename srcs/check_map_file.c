@@ -80,7 +80,7 @@ int	check_txt(t_map *map)
 	if (map->txt == NULL)
 		return (1);
 	i = -1;
-	while (++i < 7)
+	while (++i < 4)
 	{
 		if (map->txt[i] && check_extension(map->txt[i], ".xpm") != 0)
 			return (1);

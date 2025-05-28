@@ -3,8 +3,11 @@
 void	p_er(char *str)
 {
 	ft_putstr_fd("\e[31mERROR:\n\e[0m", 2);
-	ft_putstr_fd(str, 2);
-	ft_putstr_fd("\n", 2);
+	if (str && str[0])
+	{
+		ft_putstr_fd(str, 2);
+		ft_putstr_fd("\n", 2);
+	}
 }
 
 // an atoi which check nb
