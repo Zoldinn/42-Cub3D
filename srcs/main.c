@@ -18,7 +18,6 @@ int	check_extension(char *file_name, char *ext)
 
 static int	check_args(int argc, char **argv)
 {
-
 	if (argc < 2)
 	{
 		p_er("An argument including a map in .cub format is required.");
@@ -45,7 +44,7 @@ void	init_map(t_map *map)
 
 int	main(int argc, char **argv)
 {
-	t_map map;
+	t_map	map;
 
 	init_map(&map);
 	if (check_args(argc, argv) != 0)

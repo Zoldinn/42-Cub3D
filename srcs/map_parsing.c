@@ -24,7 +24,8 @@ int	check_map_map(t_map *map, int i, int j, int x)
 			|| map->map[i][j] == 'E' || map->map[i][j] == 'W')
 			return (0);
 		else if (map->map[i][j] == ' ')
-			return (p_er(""), printf("'%c' isn't valid\n", map->map[i][j]), 1);
+			return (p_er(""), printf("'%c' not valid next to '0'\n",
+					map->map[i][j]), 1);
 		else
 			return (p_er(""), printf("'%c' isn't valid\n", map->map[i][j]), 1);
 	}
@@ -79,55 +80,26 @@ void	check_map(t_map *map)
 }
 
 //get map and datas from file and put it in map structure
-void	find_start_map(t_map *map, char **temp, int i)
+void	set_map_and_datas(t_map *map, char **temp, int i)
 {
-	char	**arr;
+	int		len_file;
 	int		j;
 
-	while (i >= 0)
-	{
-		arr = ft_split(temp[i], " \n");
-		if (ft_strlen(arr[0]) < 3 && (ft_strchr(temp[i], '/') != NULL
-				|| ft_strchr(temp[i], ',') != NULL))
-		{
-			free_arr(arr);
-			break ;
-		}
-		free_arr(arr);
-		i--;
-	}
-	map->start_map = i;
+	find_start_map(map, &i, temp);
 	map->map = ft_calloc((arrlen(temp) - i + 1), sizeof(char *));
 	map->data = ft_calloc((map->start_map + 2), sizeof(char *));
-	j = 0;
-	while (temp[++i])
-	{
-		map->map[j++] = ft_strdup(temp[i]);
-		map->rows++;
-	}
+	find_end_map(map, &i, temp);
+	len_file = i;
 	i = -1;
 	j = -1;
 	while (i++ < map->start_map)
 		map->data[++j] = ft_strdup(temp[i]);
-}
-
-void	print_datas_and_map(t_map *map)
-{
-	int	i;
-
-	i = 0;
-	while (map->data[i])
+	//COMPARE SIZE map->map AND FILE to check if map does not countain empty lines
+	/* if (map->rows != len_file - map->start_map)
 	{
-		printf("%s\n", map->data[i]);
-		i++;
-	}
-	printf("------------------------------\n");
-	i = 0;
-	while (map->map[i])
-	{
-		printf("%s\n", map->map[i]);
-		i++;
-	}
+		printf("Error\nEmpty lines are not allowed in the map\n");
+		free_and_exit(map, 1);
+	} */
 }
 
 //read map and datas from file
@@ -154,8 +126,9 @@ int	get_map(t_map *map, char *path)
 	if (file_temp)
 	{
 		temp = ft_split(file_temp, "\n");
-		find_start_map(map, temp, arrlen(temp) - 1);
+		set_map_and_datas(map, temp, arrlen(temp) - 1);
 		free_arr(temp);
+		check_empty_lines_map(map, file_temp);
 		free(file_temp);
 		print_datas_and_map(map);
 		check_map(map);

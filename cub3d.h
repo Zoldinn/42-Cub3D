@@ -44,6 +44,10 @@ int		check_file(char *path, t_map *map);
  *========================================================================**/
 char	*ft_straddstr(char *s1, char *s2);
 char	*get_next_line(int fd);
+void	print_datas_and_map(t_map *map);
+void	find_start_map(t_map *map, int *i, char **temp);
+void	find_end_map(t_map *map, int *i, char **temp);
+void	check_empty_lines_map(t_map *map, char *file_temp);
 /**========================================================================
  *!                               FREE
  *========================================================================**/
