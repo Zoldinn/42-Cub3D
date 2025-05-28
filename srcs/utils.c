@@ -2,7 +2,7 @@
 
 void	p_er(char *str)
 {
-	ft_putstr_fd("\e[31mERROR: \e[0m", 2);
+	ft_putstr_fd("\e[31mERROR:\n\e[0m", 2);
 	ft_putstr_fd(str, 2);
 	ft_putstr_fd("\n", 2);
 }

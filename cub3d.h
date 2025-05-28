@@ -7,6 +7,9 @@
 # include <fcntl.h>
 # include "libft/libft.h"
 
+# define R	"\e[31m"
+# define N	"\e[0m"
+
 typedef struct s_map
 {
 	char	**data;
@@ -29,7 +32,7 @@ typedef enum e_id
 /**========================================================================
  *!                           CHECK ERRORS
  *========================================================================**/
-int		check_extension(char *file_name);
+int		check_extension(char *file_name, char *ext);
 /**========================================================================
  *!                              PARSING
  *========================================================================**/

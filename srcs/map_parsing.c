@@ -12,22 +12,21 @@ int	check_map_map(t_map *map, int i, int j, int x)
 		|| map->map[i][j] == ' ')
 			return (0);
 		else
-			return (printf("'%c' is not valid\n", map->map[i][j]), 1);
+			return (p_er(""), printf("'%c' isn't valid\n", map->map[i][j]), 1);
 	}
 	else
 	{
 		if ((i < 0 || i == map->rows) || ((i + 1) == map->rows
 				&& map->map[i][j] == ' ') || j < 0 || map->map[i][j] == '\0')
-			return (printf("Error\nThe borders of the map are not valid\n"), 1);
+			return (p_er("The borders of the map are not valid\n"), 1);
 		else if (map->map[i][j] == '0' || map->map[i][j] == '1'
 			|| map->map[i][j] == 'N' || map->map[i][j] == 'S'
 			|| map->map[i][j] == 'E' || map->map[i][j] == 'W')
 			return (0);
 		else if (map->map[i][j] == ' ')
-			return (printf("Error\n'%c' not valid next to '0'\n",
-					map->map[i][j]), 1);
+			return (p_er(""), printf("'%c' isn't valid\n", map->map[i][j]), 1);
 		else
-			return (printf("Error\n'%c' is not valid\n", map->map[i][j]), 1);
+			return (p_er(""), printf("'%c' isn't valid\n", map->map[i][j]), 1);
 	}
 }
 
@@ -141,7 +140,7 @@ int	get_map(t_map *map, char *path)
 
 	fd = open(path, O_RDONLY);
 	if (fd == -1)
-		return (printf("error reading the file\n"), 1);
+		return (p_er("error reading the file\n"), 1);
 	str = get_next_line(fd);
 	file_temp = NULL;
 	map->rows = 0;

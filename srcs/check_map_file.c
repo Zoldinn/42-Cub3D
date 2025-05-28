@@ -72,6 +72,28 @@ char	**ids(void)
 	return (id);
 }
 
+int	check_txt(t_map *map)
+{
+	int	i;
+	// int	fd;
+
+	if (map->txt == NULL)
+		return (1);
+	i = -1;
+	while (++i < 7)
+	{
+		if (map->txt[i] && check_extension(map->txt[i], ".xpm") != 0)
+			return (1);
+		else if (map->txt[i] == NULL)
+			return (1);
+		// fd = open(map->txt[i], O_RDONLY);
+		// if (fd <= 0)
+		// 	return (p_er("failed openning a file"), 1);
+		// close(fd);
+	}
+	return (0);
+}
+
 int	check_file(char *path, t_map *map)
 {
 	int		i;
@@ -96,7 +118,7 @@ int	check_file(char *path, t_map *map)
 		return (p_er("there's something missing"), 1);
 	rgb[0] = map->data[4];
 	rgb[1] = map->data[5];
-	if (check_rgb_values(rgb) != 0)
+	if (check_rgb_values(rgb) != 0 || check_txt(map) != 0)
 		return (1);
 	return (0);
 }
