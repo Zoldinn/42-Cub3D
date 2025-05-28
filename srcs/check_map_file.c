@@ -13,21 +13,23 @@ int	check_rgb_values(char *rgb[2])
 	while (++i < 2)
 	{
 		printf("rgb[%d] : %s\n", i, rgb[i]);
-		values = ft_split(rgb[i], " ,");
+		values = ft_split(rgb[i], ",");
 		if (!values)
 			return (p_er("Failed split rgb values"), 1);
-		j = 0;
+		j = -1;
 		while (values[++j])
 		{
+			printf("value : %s\n", values[j]);
 			value = ft_check_atoi(values[j]);
+			printf("int value : %d\n", value);
 			if (value < 0 || value > 255)
 				return (p_er("RGB should be [0;255]"), free_arr(values), 1);
 		}
-		if (j != 4)
+		if (j != 3)
 			return (p_er("RGB values are only 3 int"), free_arr(values), 1);
 		free_arr(values);
 	}
-	return (0);
+	return (free(rgb[0]), free(rgb[1]), 0);
 }
 
 int	get_data(t_map *map, char **id, int i)
@@ -46,7 +48,7 @@ int	get_data(t_map *map, char **id, int i)
 			if (ft_cmpstr(line[0], id[j]) == 0)
 			{
 				if (map->txt[j] == NULL)
-					map->txt[j] = ft_strdup(line[1]);
+					map->txt[j] = ft_strdup(map->data[i]);
 				else
 					return (p_er("multiple time a texture"), free_arr(line), 1);
 				break ;
@@ -77,7 +79,8 @@ char	**ids(void)
 
 int	check_txt(t_map *map)
 {
-	int	i;
+	int		i;
+	char	**split;
 	// int	fd;
 
 	if (map->txt == NULL)
@@ -85,14 +88,18 @@ int	check_txt(t_map *map)
 	i = -1;
 	while (++i < 4)
 	{
-		if (map->txt[i] && check_extension(map->txt[i], ".xpm") != 0)
+		split = ft_split(map->txt[i], " \t");
+		if (!split)
+			return (p_er("split failed"), 1);
+		if (map->txt[i] && check_extension(split[1], ".xpm") != 0)
 			return (1);
-		else if (map->txt[i] == NULL)
+		else if (split[1] == NULL)
 			return (1);
 		// fd = open(map->txt[i], O_RDONLY);
 		// if (fd <= 0)
 		// 	return (p_er("failed openning a file"), 1);
 		// close(fd);
+		free_arr(split);
 	}
 	return (0);
 }
@@ -119,8 +126,8 @@ int	check_file(char *path, t_map *map)
 		count++;
 	if (count != 6)
 		return (p_er("there's something missing"), 1);
-	rgb[0] = get_txt("F", map);
-	rgb[1] = get_txt("C", map);
+	rgb[0] = get_rgb("F", map);
+	rgb[1] = get_rgb("C", map);
 	if (check_rgb_values(rgb) != 0 || check_txt(map) != 0)
 		return (1);
 	return (0);

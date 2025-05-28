@@ -53,5 +53,5 @@ int	main(int argc, char **argv)
 	if (check_file(argv[1], &map) != 0)
 		return (free_map(&map), 1);
 	free_map(&map);
-	return (printf("\e[32mParsing ok !\e[0m"), 0);
+	return (printf("%sParsing ok !%s\n", GREEN, NC), 0);
 }

@@ -7,8 +7,9 @@
 # include <fcntl.h>
 # include "libft/libft.h"
 
-# define R	"\e[31m"
-# define N	"\e[0m"
+# define NC		"\e[0m"
+# define RED	"\e[31m"
+# define GREEN	"\e[32m"
 
 typedef struct s_map
 {
@@ -34,7 +35,7 @@ int		check_file(char *path, t_map *map);
  *========================================================================**/
 char	*ft_straddstr(char *s1, char *s2);
 char	*get_next_line(int fd);
-char	*get_txt(char *id, t_map *map);
+char	*get_rgb(char *id, t_map *map);
 /**========================================================================
  *!                               FREE
  *========================================================================**/

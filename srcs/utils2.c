@@ -29,7 +29,7 @@ int	arrlen(char **arr)
 	return (i);
 }
 
-char	*get_txt(char *id, t_map *map)
+char	*get_rgb(char *id, t_map *map)
 {
 	int		i;
 	char	**split;
@@ -44,8 +44,7 @@ char	*get_txt(char *id, t_map *map)
 			split = ft_split(map->txt[i], " \t");
 			if (!split)
 				return (printf("erreur split\n"), NULL);
-			res = NULL;
-			res = ft_straddstr(res, split[1]);
+			res = ft_strdup(split[1]);
 			return (free_arr(split), res);
 		}
 	}
