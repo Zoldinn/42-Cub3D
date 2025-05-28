@@ -2,9 +2,9 @@
 
 void	p_er(char *str)
 {
-	printf("%sERROR%s", RED, NC);
+	printf("\n>%sERROR:\n%s", RED, NC);
 	if (str && str[0])
-		printf(":\n%s\n", str);
+		printf("%s\n", str);
 }
 
 // an atoi which check nb

@@ -12,24 +12,27 @@ int	check_rgb_values(char *rgb[2])
 		return (p_er("rgb values not found"), 1);
 	while (++i < 2)
 	{
-		printf("rgb[%d] : %s\n", i, rgb[i]);
-		values = ft_split(rgb[i], ",");
+		values = ft_split(rgb[i], " ,");
 		if (!values)
 			return (p_er("Failed split rgb values"), 1);
 		j = -1;
 		while (values[++j])
 		{
-			printf("value : %s\n", values[j]);
 			value = ft_check_atoi(values[j]);
-			printf("int value : %d\n", value);
 			if (value < 0 || value > 255)
 				return (p_er("RGB should be [0;255]"), free_arr(values), 1);
 		}
 		if (j != 3)
+		{
+			printf("line = %s\n", rgb[i]);
+			printf("value = %s\n", values[j]);
+			printf("int value = %d\n", value);
+			printf("j = %d\n", j);
 			return (p_er("RGB values are only 3 int"), free_arr(values), 1);
+		}
 		free_arr(values);
 	}
-	return (free(rgb[0]), free(rgb[1]), 0);
+	return (0);
 }
 
 int	get_data(t_map *map, char **id, int i)
@@ -92,9 +95,9 @@ int	check_txt(t_map *map)
 		if (!split)
 			return (p_er("split failed"), 1);
 		if (map->txt[i] && check_extension(split[1], ".xpm") != 0)
-			return (1);
+			return (free_arr(split), 1);
 		else if (split[1] == NULL)
-			return (1);
+			return (free_arr(split), 1);
 		// fd = open(map->txt[i], O_RDONLY);
 		// if (fd <= 0)
 		// 	return (p_er("failed openning a file"), 1);
@@ -119,16 +122,15 @@ int	check_file(char *path, t_map *map)
 	id = ids();
 	if (get_data(map, id, -1) != 0)
 		return (free(id), 1);
-	free(id);
 	i = -1;
 	count = 0;
 	while (map->txt[++i])
 		count++;
 	if (count != 6)
-		return (p_er("there's something missing"), 1);
+		return (p_er("there's something missing"), free(id),1);
 	rgb[0] = get_rgb("F", map);
 	rgb[1] = get_rgb("C", map);
 	if (check_rgb_values(rgb) != 0 || check_txt(map) != 0)
-		return (1);
-	return (0);
+		return (free(rgb[0]), free(rgb[1]), free(id),1);
+	return (free(rgb[0]), free(rgb[1]), free(id), 0);
 }

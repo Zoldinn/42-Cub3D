@@ -38,7 +38,6 @@ char	*get_rgb(char *id, t_map *map)
 	i = -1;
 	while (map->txt[++i])
 	{
-		printf("txt : %s\n", map->txt[i]);
 		if (ft_strnstr(map->txt[i], id, ft_strlen(map->txt[i])) != NULL)
 		{
 			split = ft_split(map->txt[i], " \t");
@@ -48,5 +47,5 @@ char	*get_rgb(char *id, t_map *map)
 			return (free_arr(split), res);
 		}
 	}
-	return (printf("not found\n"), NULL);
+	return (NULL);
 }
