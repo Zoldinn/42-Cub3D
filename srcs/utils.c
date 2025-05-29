@@ -91,3 +91,23 @@ char	*get_next_line(int fd)
 		return (NULL);
 	return (ft_strdup(line));
 }
+
+void	print_datas_and_map(t_map *map)
+{
+	int	i;
+
+	i = 0;
+	while (map->data[i])
+	{
+		printf("%s\n", map->data[i]);
+		i++;
+	}
+	printf("------------------------------\n");
+	i = 0;
+	while (map->map[i])
+	{
+		printf("%s\n", map->map[i]);
+		i++;
+	}
+	printf("*********************\n");
+}

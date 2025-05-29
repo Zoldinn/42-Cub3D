@@ -80,11 +80,15 @@ void	check_map(t_map *map)
 }
 
 //get map and datas from file and put it in map structure
-void	set_map_and_datas(t_map *map, char **temp, int i)
+void	set_map_and_datas(t_map *map, char *file_temp)
 {
+	char	**temp;
 	int		len_file;
+	int		i;
 	int		j;
 
+	temp = ft_split(file_temp, "\n");
+	i = arrlen(temp) - 1;
 	find_start_map(map, &i, temp);
 	map->map = ft_calloc((arrlen(temp) - i + 1), sizeof(char *));
 	map->data = ft_calloc((map->start_map + 2), sizeof(char *));
@@ -94,18 +98,12 @@ void	set_map_and_datas(t_map *map, char **temp, int i)
 	j = -1;
 	while (i++ < map->start_map)
 		map->data[++j] = ft_strdup(temp[i]);
-	//COMPARE SIZE map->map AND FILE to check if map does not countain empty lines
-	/* if (map->rows != len_file - map->start_map)
-	{
-		printf("Error\nEmpty lines are not allowed in the map\n");
-		free_and_exit(map, 1);
-	} */
+	free_arr(temp);
 }
 
 //read map and datas from file
 int	get_map(t_map *map, char *path)
 {
-	char	**temp;
 	char	*str;
 	char	*file_temp;
 	int		fd;
@@ -125,11 +123,8 @@ int	get_map(t_map *map, char *path)
 	close(fd);
 	if (file_temp)
 	{
-		temp = ft_split(file_temp, "\n");
-		set_map_and_datas(map, temp, arrlen(temp) - 1);
-		free_arr(temp);
+		set_map_and_datas(map, file_temp);
 		check_empty_lines_map(map, file_temp);
-		free(file_temp);
 		print_datas_and_map(map);
 		check_map(map);
 	}

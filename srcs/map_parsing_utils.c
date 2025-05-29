@@ -1,25 +1,5 @@
 #include "../cub3d.h"
 
-void	print_datas_and_map(t_map *map)
-{
-	int	i;
-
-	i = 0;
-	while (map->data[i])
-	{
-		printf("%s\n", map->data[i]);
-		i++;
-	}
-	printf("------------------------------\n");
-	i = 0;
-	while (map->map[i])
-	{
-		printf("%s\n", map->map[i]);
-		i++;
-	}
-	printf("*********************\n");
-}
-
 void	find_start_map(t_map *map, int *i, char **temp)
 {
 	char	**arr;
@@ -58,6 +38,16 @@ void	find_end_map(t_map *map, int *i, char **temp)
 	}
 }
 
+void	error_in_comparing(t_map *map, char *temp, char *file_temp)
+{
+	free(temp);
+	free(file_temp);
+	printf("Error\nEmpty lines are not allowed in the map\n");
+	free_and_exit(map, 1);
+}
+
+//compare maps from structure (no '\n') and map from file to see if there
+//are any empty lines
 void	compare_maps(t_map *map, char *file_temp, int i)
 {
 	char	*temp;
@@ -67,32 +57,33 @@ void	compare_maps(t_map *map, char *file_temp, int i)
 	index_map = 0;
 	while (map->map[index_map])
 	{
-		j = 0;
-		while (file_temp[i] != '\n')
-		{
+		j = i;
+		while (file_temp[j] != '\n')
 			j++;
-			i--;
-		}
-		temp = ft_substr(file_temp, i + 1, j);
-		printf("map : %s\n", map->map[index_map]);
-		printf("temp : %s\n", temp);
-		if (ft_cmpstr(map->map[index_map], temp) != 0)
+		temp = ft_substr(file_temp, i, j - i);
+		i += (j - i) + 1;
+		if (ft_cmpstr(map->map[index_map], temp) != 0 || temp[0] == '\n')
+			error_in_comparing(map, temp, file_temp);
+		if (!temp || temp[0] == '\0')
 		{
 			free(temp);
-			printf("Error\nEmpty lines are not allowed in the map\n");
-			free_and_exit(map, 1);
+			break ;
 		}
 		free(temp);
 		index_map++;
 	}
 }
 
+//set file_temp to be compared in compare_maps
 void	check_empty_lines_map(t_map *map, char *file_temp)
 {
-	int		i;
-	int		j;
+	int	i;
+	int	j;
 
 	i = ft_strlen(file_temp) - 1;
+	while (file_temp[i] == '\n')
+		i--;
+	i++;
 	j = 0;
 	while (j < map->rows && i >= 0)
 	{
@@ -103,7 +94,12 @@ void	check_empty_lines_map(t_map *map, char *file_temp)
 	if (j != map->rows)
 	{
 		printf("Error\nEmpty lines are not allowed in the map\n");
+		free(file_temp);
 		free_and_exit(map, 1);
 	}
+	while (i >= 0 && file_temp[i] != '\n')
+		i--;
+	i++;
 	compare_maps(map, file_temp, i);
+	free(file_temp);
 }
