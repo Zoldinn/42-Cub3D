@@ -15,6 +15,7 @@ typedef struct s_map
 	char	**data;
 	char	**map;
 	int		rows;
+	int		lines_data;
 	int		start_map;
 	char	**txt;
 }	t_map;

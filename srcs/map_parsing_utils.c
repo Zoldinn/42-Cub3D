@@ -42,7 +42,7 @@ void	error_in_comparing(t_map *map, char *temp, char *file_temp)
 {
 	free(temp);
 	free(file_temp);
-	printf("Error\nEmpty lines are not allowed in the map\n");
+	p_er("Empty lines are not allowed in the map");
 	free_and_exit(map, 1);
 }
 
@@ -93,7 +93,7 @@ void	check_empty_lines_map(t_map *map, char *file_temp)
 	}
 	if (j != map->rows)
 	{
-		printf("Error\nEmpty lines are not allowed in the map\n");
+		p_er("Empty lines are not allowed in the map");
 		free(file_temp);
 		free_and_exit(map, 1);
 	}

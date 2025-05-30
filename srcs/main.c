@@ -40,6 +40,8 @@ void	init_map(t_map *map)
 	map->data = NULL;
 	map->map = NULL;
 	map->txt = NULL;
+	map->rows = 0;
+	map->lines_data = 0;
 }
 
 int	main(int argc, char **argv)

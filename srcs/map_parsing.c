@@ -18,7 +18,7 @@ int	check_map_map(t_map *map, int i, int j, int x)
 	{
 		if ((i < 0 || i == map->rows) || ((i + 1) == map->rows
 				&& map->map[i][j] == ' ') || j < 0 || map->map[i][j] == '\0')
-			return (p_er("The borders of the map are not valid\n"), 1);
+			return (p_er("The borders of the map are not valid"), 1);
 		else if (map->map[i][j] == '0' || map->map[i][j] == '1'
 			|| map->map[i][j] == 'N' || map->map[i][j] == 'S'
 			|| map->map[i][j] == 'E' || map->map[i][j] == 'W')
@@ -97,8 +97,16 @@ void	set_map_and_datas(t_map *map, char *file_temp)
 	i = -1;
 	j = -1;
 	while (i++ < map->start_map)
+	{
+		map->lines_data++;
 		map->data[++j] = ft_strdup(temp[i]);
+	}
 	free_arr(temp);
+	if (map->lines_data > 5 && map->rows == 0)
+	{
+		p_er("The map is not in the right place");
+		free_and_exit(map, 1);
+	}
 }
 
 //read map and datas from file
@@ -113,7 +121,6 @@ int	get_map(t_map *map, char *path)
 		return (p_er("error reading the file\n"), 1);
 	str = get_next_line(fd);
 	file_temp = NULL;
-	map->rows = 0;
 	while (str)
 	{
 		file_temp = ft_straddstr(file_temp, str);

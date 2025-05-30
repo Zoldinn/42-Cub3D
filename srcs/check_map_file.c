@@ -12,7 +12,7 @@ int	check_rgb_values(char *rgb[2])
 	{
 		values = ft_split(rgb[i], " ,");
 		if (!values)
-			return (p_er("Failed split rgb values"), 1);
+			return (p_er("Failed to split rgb values"), 1);
 		j = 0;
 		while (values[++j])
 		{
@@ -21,7 +21,7 @@ int	check_rgb_values(char *rgb[2])
 				return (p_er("RGB should be [0;255]"), free_arr(values), 1);
 		}
 		if (j != 4)
-			return (p_er("RGB values are only 3 int"), free_arr(values), 1);
+			return (p_er("RGB values should be 3 int"), free_arr(values), 1);
 		free_arr(values);
 	}
 	return (0);
